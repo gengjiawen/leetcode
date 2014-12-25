@@ -1,6 +1,5 @@
 import collections
-import heapq
-# Given an array of integers, every element appears twice except for one. Find that single one.
+# Given an array of integers, every element appears three times except for one. Find that single one.
 #
 # Note:
 # Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
@@ -11,13 +10,13 @@ class Solution:
     # @return an integer
     def singleNumber(self, A):
         words_counts = collections.Counter(A)
-        odd = min(words_counts.items(), key=lambda k: k[1])
+        odd = min(words_counts.items(), key = lambda k: k[1])
         return odd[0]
 
 
 s = Solution()
 # odd = heapq.nsmallest(1, words_counts, key=lambda x: x[1])
-l = [5, 2, 2, 3, 3]
+l = [5, 2, 2, 2, 3, 3, 3]
 print(s.singleNumber(l))
 # m = [17, 12, 5, -6, 12, 4, 17, -5, 2, -3, 2, 4, 5, 16, -3, -4, 15, 15, -4, -5, -6]
 # print(s.singleNumber(m))
