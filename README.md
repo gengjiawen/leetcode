@@ -1,3 +1,3 @@
 leetcode
 ========
-This is my leetcode solutions, written in python.
+This is my leetcode solutions.
