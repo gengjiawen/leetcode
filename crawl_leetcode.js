@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-const axios = require("axios");
+const Sequelize = require('sequelize')
+const axios = require('axios')
 
 const sequelize = new Sequelize('sqlite://leetcode.db', {
   define: {
@@ -7,7 +7,7 @@ const sequelize = new Sequelize('sqlite://leetcode.db', {
     freezeTableName: true,
     logging: false
   }
-});
+})
 
 const Problem = sequelize.define('leetcode', {
   id: {type: Sequelize.INTEGER, primaryKey: true},
@@ -15,43 +15,43 @@ const Problem = sequelize.define('leetcode', {
   title: {type: Sequelize.STRING},
   difficulty: {type: Sequelize.INTEGER},
   paidOnly: {type: Sequelize.BOOLEAN}
-});
+})
 
 Problem.sync()
 
-async function saveRecord(url) {
-  const r = await axios.get("https://leetcode.com/api/problems/algorithms/")
+async function saveRecord (url) {
+  const r = await axios.get('https://leetcode.com/api/problems/algorithms/')
   const response = r.data
   response.stat_status_pairs.forEach(item => {
-      console.log(item)
-      Problem.upsert({
-          id: item.stat.question_id,
-          url: `https://leetcode.com/problems/${item.stat.question__title_slug}`,
-          title: item.stat.question__title,
-          difficulty: item.difficulty.level,
-          paidOnly: item.paid_only
-      });
+    console.log(item)
+    Problem.upsert({
+      id: item.stat.question_id,
+      url: `https://leetcode.com/problems/${item.stat.question__title_slug}`,
+      title: item.stat.question__title,
+      difficulty: item.difficulty.level,
+      paidOnly: item.paid_only
+    })
   })
 
-  return response;
+  return response
 }
 
 saveRecord()
   .then(r => {
-      console.log(r);
+    console.log(r)
   })
   .catch(e => {
-      console.log(e);
+    console.log(e)
   })
 
-async function getBody(url, force = false) {
+async function getBody (url, force = false) {
   if (force) {
     return await saveRecord(url)
   }
 
   const a = await Problem.findOne({where: {url: url}})
   if (a !== null) {
-    return a.dataValues.body;
+    return a.dataValues.body
   }
 
   return await saveRecord(url)
