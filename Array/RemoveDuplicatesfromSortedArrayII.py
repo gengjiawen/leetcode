@@ -12,4 +12,23 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        
+        a = list()
+        j = 0
+        for i in range(len(nums)):
+            if nums[i] not in a:
+                if len(a) != 0:
+                    a.clear()
+                a.append(nums[i])
+                nums[j] = nums[i]
+                j = j + 1
+            elif len(a) < 2:
+                a.append(nums[i])
+                nums[j] = nums[i]
+                j = j + 1
+            else:
+                continue
+        return j
+
+
+# print(Solution().removeDuplicates([1, 1]))
+# print(Solution().removeDuplicates([1, 1, 1, 2]))
