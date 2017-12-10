@@ -14,4 +14,13 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
+        i = 0
+        j = 0
+        for i in range(len(nums)):
+            if nums[i] == val:
+                continue
+            nums[j] = nums[i]
+            j = j + 1
+
+        return j
         
