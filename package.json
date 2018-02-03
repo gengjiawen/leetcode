@@ -4,32 +4,35 @@
   "description": "leetcode ======== This is my leetcode solutions.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint --ext .js,.vue . --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gengjiawen/leetcode.git"
   },
-  "author": "",
+  "author": "gengjiawen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gengjiawen/leetcode/issues"
   },
   "homepage": "https://github.com/gengjiawen/leetcode#readme",
   "dependencies": {
-    "axios": "^0.16.2",
-    "cheerio": "^1.0.0-rc.2",
-    "sequelize": "^4.13.8",
-    "sqlite3": "^3.1.13",
-    "to-markdown": "^3.1.0"
+    "axios": "0.16.2",
+    "cheerio": "1.0.0-rc.2",
+    "sequelize": "4.13.8",
+    "sqlite3": "3.1.13",
+    "to-markdown": "3.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "babel-core": "6.26.0",
+    "babel-jest": "22.1.0",
+    "eslint": "4.8.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.2.0",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "regenerator-runtime": "0.11.1"
   }
 }
