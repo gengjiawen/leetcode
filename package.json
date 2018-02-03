@@ -21,6 +21,7 @@
   "dependencies": {
     "axios": "0.17.1",
     "cheerio": "1.0.0-rc.2",
+    "fs-extra": "5.0.0",
     "sequelize": "4.32.5",
     "sqlite3": "3.1.13",
     "to-markdown": "3.1.1"
