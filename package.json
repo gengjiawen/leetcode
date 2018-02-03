@@ -1,9 +1,10 @@
 {
   "name": "leetcode",
   "version": "1.0.0",
-  "description": "leetcode ======== This is my leetcode solutions.",
+  "description": "My leetcode solutions.",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier \"./**/*.js\" --ignore-path ./.prettierignore --write",
     "test": "jest",
     "lint": "eslint --ext .js,.vue . --fix"
   },
@@ -18,21 +19,22 @@
   },
   "homepage": "https://github.com/gengjiawen/leetcode#readme",
   "dependencies": {
-    "axios": "0.16.2",
+    "axios": "0.17.1",
     "cheerio": "1.0.0-rc.2",
-    "sequelize": "4.13.8",
+    "sequelize": "4.32.5",
     "sqlite3": "3.1.13",
-    "to-markdown": "3.1.0"
+    "to-markdown": "3.1.1"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-jest": "22.1.0",
-    "eslint": "4.8.0",
-    "eslint-config-standard": "10.2.1",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-node": "5.2.0",
+    "eslint": "4.17.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
+    "prettier": "1.10.2",
     "regenerator-runtime": "0.11.1"
   }
 }
