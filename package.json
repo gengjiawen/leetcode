@@ -26,6 +26,10 @@
     "to-markdown": "3.1.1"
   },
   "devDependencies": {
+    "@types/fs-extra": "5.0.0",
+    "@types/jest": "22.1.1",
+    "@types/node": "9.4.0",
+    "@types/rimraf": "2.0.2",
     "babel-core": "6.26.0",
     "babel-jest": "22.1.0",
     "eslint": "4.17.0",
@@ -35,6 +39,12 @@
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
     "prettier": "1.10.2",
+    "jest": "22.1.4",
+    "nodemon": "1.14.12",
+    "rimraf": "2.6.2",
+    "ts-jest": "22.0.3",
+    "ts-node": "4.1.0",
+    "typescript": "2.7.1",
     "regenerator-runtime": "0.11.1"
   }
 }
