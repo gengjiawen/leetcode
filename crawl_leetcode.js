@@ -53,6 +53,21 @@ const converter_code = {
   },
 }
 
+function getPythonCode(pageData) {
+  let python = pageData.codeDefinition.find(a => a.value === 'python3')
+  if (python === undefined) {
+    python = pageData.codeDefinition.find(a => a.value === 'python')
+  }
+
+  return python.defaultCode;
+}
+
+const JSconfig = {
+  getCode: (pageData) => pageData.codeDefinition.find(a => a.value === 'javascript').defaultCode,
+  ext: 'js',
+  comment: '//'
+}
+
 function generatePool() {
   fs.ensureDirSync('pools')
   Problem.findAll().then(records => {
@@ -69,13 +84,9 @@ function generatePool() {
           if (s.data.trim().startsWith('var pageData')) {
             eval(s.data.trim())
             console.log(pageData.codeDefinition)
-            let python = pageData.codeDefinition.find(a => a.value === 'python3')
-            if (python === undefined) {
-              python = pageData.codeDefinition.find(a => a.value === 'python')
-            }
-
-            const code = python.defaultCode
-            const name = `pools/${p.title.replace(/\s/g, '')}.py`
+            const {getCode , ext, comment} = JSconfig
+            const code = getCode(pageData);
+            const name = `pools/${p.title.replace(/\s/g, '')}.${ext}`
             const content = $('.question-description')
             let description = toMarkdown(content.html(), {
               gfm: true,
@@ -94,11 +105,11 @@ function generatePool() {
               .split('\n')
               .filter(a => a.trim() !== '')
               .reduce((sum, value) => {
-                return `${sum}\n# ${value.trim()}`
-              }, '# ')
+                return `${sum}\n${comment} ${value.trim()}`
+              }, `${comment} `)
             console.log(description)
 
-            const fileContent = `# ${p.url}\n${description}\n\n${code}`
+            const fileContent = `${comment} ${p.url}\n${description}\n\n${code}`
             
             fs.writeFile(name, fileContent, err => {
               if (err) throw err
