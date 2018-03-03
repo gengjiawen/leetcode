@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/invert-binary-tree
-// 
+//
 // Invert a binary tree.
 // ```
 //      4
@@ -32,7 +32,7 @@
  */
 var invertTree = function(root) {
   if (root === null || (root.right === null && root.left === null)) {
-    return root;
+    return root
   }
 
   let temp = root.right
@@ -40,4 +40,4 @@ var invertTree = function(root) {
   root.left = invertTree(temp)
 
   return root
-};
+}
