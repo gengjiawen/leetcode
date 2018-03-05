@@ -27,6 +27,10 @@ sourceSets {
             srcDir "./Array"
             srcDir "./Tree"
         }
+        kotlin {
+            srcDir "./Array"
+            srcDir "./Tree"
+        }
     }
 }
 
