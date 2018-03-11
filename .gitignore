@@ -5,6 +5,7 @@
 *.lock
 
 out/
+pools/
 
 node_modules
 package-lock.json
