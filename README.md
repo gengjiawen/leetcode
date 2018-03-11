@@ -7,3 +7,9 @@ leetcode
 [LeetCode Online Judge](https://leetcode.com/) is a website containing many **algorithm questions**. Most of them are real interview questions of **Google, Facebook, LinkedIn, Apple**, etc. This is my leetcode solutions, written in many language.
 
 ![Leetcode](./leetcode.png?style=centerme)
+
+## prerequisite
+You can easily generate all the template code using `util/generate_pools.ts` for all your file.
+```bash
+ts-node ./util/generate_pools.ts
+```
