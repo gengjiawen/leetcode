@@ -12,7 +12,6 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true,
     "strict": true,
     "outDir": "./build",
     "lib": [
