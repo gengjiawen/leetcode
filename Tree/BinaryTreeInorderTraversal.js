@@ -32,13 +32,13 @@ var inorderTraversal = function(root) {
   const r = []
   if (root !== null) {
     if (root.left !== null) {
-        r.push(...inorderTraversal(root.left))
+      r.push(...inorderTraversal(root.left))
     }
     r.push(root.val)
     if (root.right !== null) {
-        r.push(...inorderTraversal(root.right))
+      r.push(...inorderTraversal(root.right))
     }
   }
 
-  return r;
+  return r
 }

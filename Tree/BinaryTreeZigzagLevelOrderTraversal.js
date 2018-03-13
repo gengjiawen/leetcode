@@ -35,23 +35,23 @@
  * @return {number[][]}
  */
 var zigzagLevelOrder = function(root) {
-    const dfs = (array, node, level) => {
-        if (node === null) {
-            return null
-        }
-        if (array.length < level + 1) {
-            array.push([])
-        }
-        array[level].push(node.val)
-        dfs(array, node.left, level + 1)
-        dfs(array, node.right, level + 1)
+  const dfs = (array, node, level) => {
+    if (node === null) {
+      return null
     }
+    if (array.length < level + 1) {
+      array.push([])
+    }
+    array[level].push(node.val)
+    dfs(array, node.left, level + 1)
+    dfs(array, node.right, level + 1)
+  }
 
-    const r = []
-    dfs(r, root, 0)
+  const r = []
+  dfs(r, root, 0)
 
-    const zigzag = r.map((i, index) => {
-        return index % 2 === 0 ? i : i.reverse()
-    })
-    return zigzag
+  const zigzag = r.map((i, index) => {
+    return index % 2 === 0 ? i : i.reverse()
+  })
+  return zigzag
 }
