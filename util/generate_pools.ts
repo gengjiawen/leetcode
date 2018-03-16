@@ -29,7 +29,7 @@ const JSconfig: CodeConfig = {
   getCode: c => c.find(a => a.value === 'javascript').defaultCode,
   ext: 'js',
   comment: '//',
-  fileNameStyle: s => s.replace(/\s/g, '')
+  fileNameStyle: s => s.replace(/[\s|?]/g, '')
 }
 
 const Goconfig: CodeConfig = {
@@ -51,7 +51,12 @@ function generatePool(config: CodeConfig) {
 
       const data = JSON.parse(p.urlContent).data
       const { getCode, ext, comment, fileNameStyle } = config
-      const code = getCode(JSON.parse(data.question.codeDefinition))
+      let code = undefined
+      try {
+        code = getCode(JSON.parse(data.question.codeDefinition))
+      } catch (e) {
+        return
+      }
       const name = `pools/${fileNameStyle(p.title)}.${ext}`
       const content = data.question.content
       let description = toMarkdown(content, {
@@ -72,17 +77,17 @@ function generatePool(config: CodeConfig) {
         .reduce((sum, value) => {
           return `${sum}\n${comment} ${value}`
         }, `${comment} `)
-      console.log(description)
 
       const fileContent = `${comment} ${p.url}\n${description}\n\n${code}`
 
       fs.writeFile(name, fileContent, err => {
         if (err) throw err
-        console.log('The file has been saved!')
       })
+
+      console.log('generate pools finished')
     })
   })
 }
 
 
-generatePool(Goconfig)
+generatePool(JSconfig)
