@@ -84,10 +84,10 @@ function generatePool(config: CodeConfig) {
         if (err) throw err
       })
 
-      console.log('generate pools finished')
     })
   })
 }
 
 
-generatePool(JSconfig)
+console.log('generate pools finished')
+generatePool(Goconfig)

@@ -44,7 +44,7 @@ var maxPathSum = function(root) {
     maxSum = Math.max(sum, maxSum)
 
     console.log(node.val, l, r, sum)
-    return Math.max(l, r) > 0 ? (Math.max(r, l) + node.val) : node.val
+    return Math.max(l, r) > 0 ? Math.max(r, l) + node.val : node.val
   }
 
   let maxSum = Number.MIN_SAFE_INTEGER
