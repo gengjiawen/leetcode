@@ -1,10 +1,12 @@
 *.iml
 
 .idea/
+.vscode
 *.log
 *.lock
 
 out/
+build/
 pools/
 
 node_modules
