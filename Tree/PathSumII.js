@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/path-sum-ii
-// 
+//
 // Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
-// 
+//
 // For example:
 // Given the below binary tree and `sum = 22`,
 // ```
@@ -13,9 +13,9 @@
 //          /  \    / \
 //         7    2  5   1
 // ```
-// 
+//
 // return
-// 
+//
 // ```
 // [
 //    [5,4,11,2],
@@ -60,4 +60,4 @@ var pathSum = function(root, sum) {
   let temp = []
   helper(root, temp, sum)
   return r
-};
+}

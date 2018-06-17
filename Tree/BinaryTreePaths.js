@@ -55,5 +55,5 @@ var binaryTreePaths = function(root) {
 
   helper(root, [])
 
-  return r.map(i => i.join("->"))
+  return r.map(i => i.join('->'))
 }

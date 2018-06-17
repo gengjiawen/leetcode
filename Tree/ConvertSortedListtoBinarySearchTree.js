@@ -32,7 +32,7 @@
  *     this.left = this.right = null;
  * }
  */
-import {Treenode} from "./ModelDefinition/TreeNode";
+import { Treenode } from './ModelDefinition/TreeNode'
 
 /**
  * @param {ListNode} head

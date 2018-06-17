@@ -90,4 +90,4 @@ function generatePool(config: CodeConfig) {
 
 
 console.log('generate pools finished')
-generatePool(Goconfig)
+generatePool(JSconfig)
