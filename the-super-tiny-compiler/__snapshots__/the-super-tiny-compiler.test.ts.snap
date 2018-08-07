@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tiny compiler 1`] = `
+Array [
+  Object {
+    "type": "paren",
+    "value": "(",
+  },
+  Object {
+    "type": "name",
+    "value": "add",
+  },
+  Object {
+    "type": "number",
+    "value": "2",
+  },
+  Object {
+    "type": "paren",
+    "value": "(",
+  },
+  Object {
+    "type": "name",
+    "value": "subtract",
+  },
+  Object {
+    "type": "number",
+    "value": "4",
+  },
+  Object {
+    "type": "number",
+    "value": "2",
+  },
+  Object {
+    "type": "paren",
+    "value": ")",
+  },
+  Object {
+    "type": "paren",
+    "value": ")",
+  },
+]
+`;
+
+exports[`tiny compiler 2`] = `
+Object {
+  "body": Array [
+    Object {
+      "name": "add",
+      "params": Array [
+        Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
+        Object {
+          "name": "subtract",
+          "params": Array [
+            Object {
+              "type": "NumberLiteral",
+              "value": "4",
+            },
+            Object {
+              "type": "NumberLiteral",
+              "value": "2",
+            },
+          ],
+          "type": "CallExpression",
+        },
+      ],
+      "type": "CallExpression",
+    },
+  ],
+  "type": "Program",
+}
+`;
+
+exports[`tiny compiler 3`] = `
+Object {
+  "body": Array [
+    Object {
+      "expression": Object {
+        "arguments": Array [
+          Object {
+            "type": "NumberLiteral",
+            "value": "2",
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "type": "NumberLiteral",
+                "value": "4",
+              },
+              Object {
+                "type": "NumberLiteral",
+                "value": "2",
+              },
+            ],
+            "callee": Object {
+              "name": "subtract",
+              "type": "Identifier",
+            },
+            "type": "CallExpression",
+          },
+        ],
+        "callee": Object {
+          "name": "add",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "type": "ExpressionStatement",
+    },
+  ],
+  "type": "Program",
+}
+`;
