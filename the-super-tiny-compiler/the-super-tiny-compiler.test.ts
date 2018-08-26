@@ -10,6 +10,6 @@ it('tiny compiler', () => {
     expect(ast).toMatchSnapshot()
     let newAst = transformer(ast)
     expect(newAst).toMatchSnapshot()
-    let output = codeGenerator(newAst)
-    expect(output).toMatch(output)
+    let o = codeGenerator(newAst)
+    expect(o).toBe(output)
 })
