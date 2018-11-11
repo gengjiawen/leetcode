@@ -1,6 +1,6 @@
-import axios from "axios";
-import Sequelize from "sequelize";
-import * as path from "path";
+import axios from 'axios'
+import Sequelize from 'sequelize'
+import * as path from 'path'
 
 const sequelize = new Sequelize('leetcode', 'null', 'null', {
   dialect: 'sqlite',
@@ -8,7 +8,7 @@ const sequelize = new Sequelize('leetcode', 'null', 'null', {
     timestamps: true,
     freezeTableName: true,
   },
-  storage: path.normalize(`${__dirname}/leetcode.db`)
+  storage: path.normalize(`${__dirname}/leetcode.db`),
 })
 
 export const Problem = sequelize.define('leetcode', {
@@ -121,4 +121,3 @@ async function saveRecord() {
 
   return response
 }
-

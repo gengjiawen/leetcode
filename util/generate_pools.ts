@@ -1,7 +1,7 @@
-import * as toMarkdown from "to-markdown";
-import * as fs from "fs-extra";
-import {Problem} from "./crawl_leetcode";
-import {Converter} from "to-markdown";
+import * as toMarkdown from 'to-markdown'
+import * as fs from 'fs-extra'
+import { Problem } from './crawl_leetcode'
+import { Converter } from 'to-markdown'
 
 const converter_code: Converter = {
   filter: ['pre'],
@@ -10,33 +10,32 @@ const converter_code: Converter = {
   },
 }
 
-
 function underline(s: string) {
   return s
     .split(' ')
     .map(a => a.toLowerCase())
     .join('_')
-    .replace("?", "")
+    .replace('?', '')
 }
 
 interface CodeConfig {
-  getCode(code: any[]): string;
-  ext: string;
-  comment: string;
-  fileNameStyle(s: string): string;
+  getCode(code: any[]): string
+  ext: string
+  comment: string
+  fileNameStyle(s: string): string
 }
 const JSconfig: CodeConfig = {
   getCode: c => c.find(a => a.value === 'javascript').defaultCode,
   ext: 'js',
   comment: '//',
-  fileNameStyle: s => s.replace(/[\s|?]/g, '')
+  fileNameStyle: s => s.replace(/[\s|?]/g, ''),
 }
 
 const Goconfig: CodeConfig = {
   getCode: c => c.find(a => a.value === 'golang').defaultCode,
   ext: 'go',
   comment: '//',
-  fileNameStyle: underline
+  fileNameStyle: underline,
 }
 
 function generatePool(config: CodeConfig) {
@@ -83,11 +82,9 @@ function generatePool(config: CodeConfig) {
       fs.writeFile(name, fileContent, err => {
         if (err) throw err
       })
-
     })
   })
 }
-
 
 console.log('generate pools finished')
 generatePool(JSconfig)
