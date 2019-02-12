@@ -136,7 +136,10 @@ export function parser(tokens: Token[]): Node {
 
       token = tokens[++current]
 
-      while (token.type !== 'paren' || (token.type === 'paren' && token.value !== ')')) {
+      while (
+        token.type !== 'paren' ||
+        (token.type === 'paren' && token.value !== ')')
+      ) {
         node.params.push(walk())
         token = tokens[current]
       }
@@ -271,7 +274,9 @@ export function codeGenerator(node: Node): string {
       return `${codeGenerator(node.expression)};`
 
     case 'CallExpression':
-      return `${codeGenerator(node.callee)}(${node.arguments.map(codeGenerator).join(', ')})`
+      return `${codeGenerator(node.callee)}(${node.arguments
+        .map(codeGenerator)
+        .join(', ')})`
 
     case 'Identifier':
       return node.name

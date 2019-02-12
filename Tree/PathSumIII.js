@@ -50,7 +50,11 @@ var pathSum = function(root, sum) {
       count = count + 1
     }
 
-    return count + helper(node.left, sum - node.val) + helper(node.right, sum - node.val)
+    return (
+      count +
+      helper(node.left, sum - node.val) +
+      helper(node.right, sum - node.val)
+    )
   }
 
   if (root === null) {

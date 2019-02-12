@@ -84,7 +84,8 @@ async function getQuestionDetail(title_slug: string) {
     {
       headers: {
         'Content-Type': 'application/json',
-        'x-csrftoken': 'SVU7oF1p6tpUnCV2RAbTDgMDWmDhoMyVUrvZT5fQBIkCBlHKB4ZEqiXiuoS1VEwA',
+        'x-csrftoken':
+          'SVU7oF1p6tpUnCV2RAbTDgMDWmDhoMyVUrvZT5fQBIkCBlHKB4ZEqiXiuoS1VEwA',
         Cookie:
           '__cfduid=d9a16b6a9230fc9ac5336daa9d028b3aa1518086485; csrftoken=SVU7oF1p6tpUnCV2RAbTDgMDWmDhoMyVUrvZT5fQBIkCBlHKB4ZEqiXiuoS1VEwA; _ga=GA1.2.386088192.1518086487; LEETCODE_SESSION=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlY2huaWNhbGN1dGUiLCJ1c2VyX3NsdWciOiJ0ZWNobmljYWxjdXRlIiwiX2F1dGhfdXNlcl9pZCI6Ijg3MTM1IiwiUkVNT1RFX0FERFIiOiIxNC4yMC44OS4yMTIiLCJ0aW1lc3RhbXAiOiIyMDE4LTAyLTI4IDAyOjI5OjM3Ljg3MDQ1MiswMDowMCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImFsbGF1dGguYWNjb3VudC5hdXRoX2JhY2tlbmRzLkF1dGhlbnRpY2F0aW9uQmFja2VuZCIsImlkIjo4NzEzNSwiYXZhdGFyIjoiaHR0cHM6Ly93d3cuZ3JhdmF0YXIuY29tL2F2YXRhci9lZGJjMTUyODgxOWRlZTdmZmU5MzAxZjQwNmMxYjgzYy5wbmc_cz0yMDAiLCJfYXV0aF91c2VyX2hhc2giOiI1NmIwZWM5NWE4MTdkMTQ5MDFlNDQwNTlmMGUxMTg2ZDk5YWQ5ZjI3IiwiZW1haWwiOiJ0ZWNobmljYWxjdXRlQGdtYWlsLmNvbSIsIklERU5USVRZIjoiZTZiYjVjZjk1OWQyMTQ2OWVhMjEzY2QzNDRkNjI5ZWEifQ.qxsM6lRE0qxOtiN4sV2HebS0MmFX44QCcS3ZVKVAlI4; _gid=GA1.2.2127778503.1519968442; _gat=1',
         Referer: 'https://leetcode.com/',
@@ -101,7 +102,9 @@ async function saveRecord() {
   const response = r.data
   response.stat_status_pairs.forEach(async (item: any) => {
     console.log(item)
-    const url = `https://leetcode.com/problems/${item.stat.question__title_slug}`
+    const url = `https://leetcode.com/problems/${
+      item.stat.question__title_slug
+    }`
     const r = await Problem.findOne({ where: { url: url } })
     if (r !== null) {
       return

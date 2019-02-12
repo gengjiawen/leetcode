@@ -46,7 +46,10 @@ var buildTree = function(inorder, postorder) {
   const rightInOrder = inorder.slice(index + 1, inorder.length)
 
   const leftInPostOrder = postorder.slice(0, leftInOrder.length)
-  const rightPostOrder = postorder.slice(leftInOrder.length + 1, postorder.length - 1)
+  const rightPostOrder = postorder.slice(
+    leftInOrder.length + 1,
+    postorder.length - 1
+  )
 
   node.left = buildTree(leftInOrder, leftInPostOrder)
   node.right = buildTree(rightInOrder, rightPostOrder)
