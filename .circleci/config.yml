@@ -1,32 +1,32 @@
 version: 2
 jobs:
-    build:
-        docker:
-            - image: node:lts
-        working_directory: ~/repo
+  build:
+    docker:
+      - image: node:lts
+    working_directory: ~/repo
 
-        steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
-            - run: yarn install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
-            - run: yarn test
-    test:
-        machine: true
-        working_directory: ~/project
-        steps:
-            - checkout
-            - run: echo "hi"
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn test
+  test:
+    machine: true
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run: echo "hi"
 
 workflows:
-    version: 2
-    one_and_two:
-        jobs:
-            - build
-            - test
+  version: 2
+  one_and_two:
+    jobs:
+      - build
+      - test
