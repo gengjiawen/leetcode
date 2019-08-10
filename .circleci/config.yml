@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - checkout
-      - run: cd Array && go test
+      - run: cd Array && go test -v
 
   test:
     machine: true

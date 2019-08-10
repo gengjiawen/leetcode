@@ -5,7 +5,7 @@ package Array
 
 import "testing"
 
-func TestHello(t *testing.T) {
+func TestContainDuplicateII(t *testing.T) {
 	got := containsNearbyDuplicate([]int{1, 2, 3, 1}, 3)
 
 	if !got {
