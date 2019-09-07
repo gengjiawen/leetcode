@@ -19,7 +19,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
 
-  go-test:
+  golang-test:
     docker:
       - image: golang:latest
     working_directory: ~/repo
