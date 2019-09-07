@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   js-test:
     docker:
@@ -39,5 +40,5 @@ workflows:
   leetcode:
     jobs:
       - js-test
-      - go-test
+      - golang-test
       - test
