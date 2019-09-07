@@ -36,7 +36,7 @@ jobs:
       - run: echo "hi"
 
 workflows:
-  one_and_two:
+  leetcode:
     jobs:
       - js-test
       - go-test
