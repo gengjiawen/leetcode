@@ -52,7 +52,7 @@
     "@types/to-markdown": "3.0.0",
     "@babel/core": "*",
     "@babel/preset-env": "*",
-    "babel-jest": "24.7.1",
+    "babel-jest": "24.9.0",
     "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.16.0",
