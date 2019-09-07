@@ -34,7 +34,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - run: echo "hi"
+      - run: echo "hello world"
 
 workflows:
   leetcode:
