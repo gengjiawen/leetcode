@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "5.0.5",
-    "@types/node": "12.7.12",
+    "@types/node": "12.11.2",
     "@types/jest": "*",
     "@types/rimraf": "2.0.2",
     "@types/sequelize": "^4.27.10",
