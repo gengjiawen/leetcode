@@ -29,6 +29,15 @@ jobs:
       - checkout
       - run: cd Array && go test -v
 
+  java-test:
+    docker:
+      - image: openjdk
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: chmod +x ./gradlew && ./gradlew assemble
+
   test:
     machine: true
     working_directory: ~/project
@@ -41,4 +50,5 @@ workflows:
     jobs:
       - js-test
       - golang-test
+      - java-test
       - test
