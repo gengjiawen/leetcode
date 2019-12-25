@@ -22,7 +22,7 @@
   "homepage": "https://github.com/gengjiawen/leetcode#readme",
   "dependencies": {
     "axios": "0.19.0",
-    "fs-extra": "7.0.1",
+    "fs-extra": "8.1.0",
     "sequelize": "5.18.4",
     "sqlite3": "4.1.0",
     "to-markdown": "3.1.1"
