@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   js-test:
     docker:
-      - image: gengjiawen/node-build
+      - image: gengjiawen/node-build:excited-s
     working_directory: ~/repo
 
     steps:
