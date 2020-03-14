@@ -43,6 +43,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
+      - docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: echo "hello world"
 
 workflows:
