@@ -44,9 +44,9 @@ jobs:
     steps:
       - checkout
       - run: 
-        command: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          echo "hello world"
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            echo "hello world"
 
 workflows:
   leetcode:
