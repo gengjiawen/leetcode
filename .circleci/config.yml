@@ -47,6 +47,8 @@ jobs:
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             echo "hello world"
+            sudo apt-get update
+            sudo apt-get install fish -y
 
 workflows:
   leetcode:
