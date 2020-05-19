@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@types/fs-extra": "5.0.5",
+    "@types/fs-extra": "9.0.1",
     "@types/node": "13.1.0",
     "@types/jest": "*",
     "@types/rimraf": "2.0.2",
