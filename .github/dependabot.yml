@@ -1,0 +1,36 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "21:00"
+    timezone: Asia/Shanghai
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/fs-extra"
+    versions:
+    - 9.0.6
+  - dependency-name: nodemon
+    versions:
+    - 2.0.6
+  - dependency-name: sequelize
+    versions:
+    - 6.3.5
+  - dependency-name: fs-extra
+    versions:
+    - 9.0.1
+  - dependency-name: ts-jest
+    versions:
+    - 24.3.0
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "21:00"
+    timezone: Asia/Shanghai
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: junit:junit
+    versions:
+    - 4.13.1
