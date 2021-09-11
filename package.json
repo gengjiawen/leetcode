@@ -7,8 +7,7 @@
     "prettier": "prettier --write \"./**/*.{js,ts,yml}\" --ignore-path ./.prettierignore",
     "clean": "rimraf build",
     "ts-build": "npm run clean && tsc -p ./tsconfig.json",
-    "test": "jest",
-    "lint": "eslint --ext .js,.vue . --fix"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,50 +20,37 @@
   },
   "homepage": "https://github.com/gengjiawen/leetcode#readme",
   "dependencies": {
-    "axios": "0.21.1",
-    "fs-extra": "7.0.1",
-    "sequelize": "5.18.4",
-    "sqlite3": "4.1.0",
+    "axios": "0.21.4",
+    "fs-extra": "10.0.0",
+    "sequelize": "6.6.5",
+    "sqlite3": "5.0.2",
     "to-markdown": "3.1.1"
   },
   "jest": {
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testMatch": [
-      "**/?(*.)(spec|test).(ts|tsx|js)",
-      "**/__tests__/*.(ts|tsx|js)",
-      "**/test/*.(ts|tsx|js)"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
+    "testEnvironment": "node"
   },
   "devDependencies": {
-    "@types/fs-extra": "5.0.5",
-    "@types/node": "13.1.0",
+    "@types/fs-extra": "9.0.12",
+    "@types/node": "16.9.1",
     "@types/jest": "*",
-    "@types/rimraf": "2.0.2",
-    "@types/sequelize": "^4.27.10",
-    "@types/to-markdown": "3.0.0",
+    "@types/rimraf": "3.0.2",
+    "@types/sequelize": "^4.28.10",
+    "@types/to-markdown": "3.0.1",
     "@babel/core": "*",
     "@babel/preset-env": "*",
-    "babel-jest": "24.9.0",
-    "eslint": "5.16.0",
-    "eslint-config-standard": "12.0.0",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-node": "10.0.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.0",
-    "jest": "24.9.0",
-    "nodemon": "1.18.10",
-    "prettier": "1.19.1",
-    "rimraf": "2.6.3",
-    "ts-jest": "24.1.0",
-    "ts-node": "8.0.3",
-    "typescript": "3.7.4"
+    "babel-jest": "27.1.1",
+    "eslint": "7.32.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-standard": "5.0.0",
+    "jest": "27.1.1",
+    "nodemon": "2.0.12",
+    "prettier": "2.4.0",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.5",
+    "ts-node": "10.2.1",
+    "typescript": "4.4.3"
   }
 }
