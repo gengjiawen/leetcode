@@ -40,12 +40,13 @@ jobs:
 
   test:
     machine:
-      image: ubuntu-2004:202010-01
+      image: ubuntu-2004:202107-02
     working_directory: ~/project
     steps:
       - checkout
       - run: 
           command: |
+            npx envinfo
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             echo "hello world"
             sudo apt-get update
