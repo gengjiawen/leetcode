@@ -27,11 +27,11 @@ jobs:
 
     steps:
       - checkout
-      - run: cd Array && go test -v
+      - run: go test -v ./...
 
   java-test:
     docker:
-      - image: openjdk
+      - image: openjdk:17
     working_directory: ~/repo
 
     steps:
@@ -39,6 +39,7 @@ jobs:
       - run: chmod +x ./gradlew && ./gradlew assemble
 
   test:
+    # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
     machine:
       image: ubuntu-2004:202107-02
     working_directory: ~/project

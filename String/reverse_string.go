@@ -3,6 +3,8 @@
 
 // Example:
 // Given s = "hello", return "olleh". 
+package String
+
 func reverseString(s string) string {
 	var c = strings.Split(s, "")
 

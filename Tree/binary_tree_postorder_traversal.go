@@ -25,6 +25,7 @@
  *     Right *TreeNode
  * }
  */
+ package Tree
 func postorderTraversal(root *TreeNode) []int {
 	res := []int{}
 	if root != nil {
