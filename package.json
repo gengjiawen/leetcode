@@ -20,37 +20,31 @@
   },
   "homepage": "https://github.com/gengjiawen/leetcode#readme",
   "dependencies": {
-    "axios": "0.21.4",
+    "axios": "0.24.0",
     "fs-extra": "10.0.0",
-    "sequelize": "6.6.5",
+    "sequelize": "6.9.0",
     "sqlite3": "5.0.2",
     "to-markdown": "3.1.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   },
   "devDependencies": {
-    "@types/fs-extra": "9.0.12",
-    "@types/node": "16.9.1",
+    "@types/fs-extra": "9.0.13",
+    "@types/node": "16.11.7",
     "@types/jest": "*",
     "@types/rimraf": "3.0.2",
     "@types/sequelize": "^4.28.10",
     "@types/to-markdown": "3.0.1",
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "babel-jest": "27.1.1",
-    "eslint": "7.32.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-standard": "5.0.0",
-    "jest": "27.1.1",
-    "nodemon": "2.0.12",
-    "prettier": "2.4.0",
+    "jest": "27.3.1",
+    "nodemon": "2.0.15",
+    "prettier": "2.4.1",
     "rimraf": "3.0.2",
-    "ts-jest": "27.0.5",
-    "ts-node": "10.2.1",
-    "typescript": "4.4.3"
+    "ts-jest": "27.0.7",
+    "ts-node": "10.4.0",
+    "typescript": "4.4.4"
   }
 }
