@@ -21,7 +21,7 @@
 //
 // In this case, no transaction is done, i.e. max profit = 0.
 // ```
-package main
+package DP
 
 func maxProfit(prices []int) int {
 	if len(prices) <= 1 {
@@ -40,9 +40,4 @@ func maxProfit(prices []int) int {
 	}
 
 	return profit
-}
-
-func main() {
-	profit := maxProfit([]int{7, 1, 5, 3, 6, 4})
-	println(profit)
 }

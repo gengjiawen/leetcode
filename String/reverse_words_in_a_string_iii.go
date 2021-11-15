@@ -9,7 +9,11 @@
 
 // Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 package String
-import "regexp"
+
+import (
+	"regexp"
+	"strings"
+)
 func reverseWords(s string) string {
     res := func (s string) string {
 		var c = strings.Split(s, "")

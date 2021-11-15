@@ -6,9 +6,7 @@
 //
 // **Note:**
 // You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
-package main
-
-import "fmt"
+package DP
 
 func Min(x, y int) int {
 	if x > y {
@@ -27,7 +25,7 @@ func Max(x, y int) int {
 /**
 find all best profits in one traction, then consider two saction, plus firstHalf and SecondHalf
 */
-func maxProfit(prices []int) int {
+func maxProfit3(prices []int) int {
 	priceLen := len(prices)
 	if priceLen < 2 {
 		return 0
@@ -53,9 +51,4 @@ func maxProfit(prices []int) int {
 	}
 
 	return maxProfit
-}
-
-func main() {
-	r := maxProfit([]int{1, 4, 2})
-	fmt.Println(r)
 }

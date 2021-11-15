@@ -2,8 +2,10 @@
 // Write a function that takes a string as input and returns the string reversed.
 
 // Example:
-// Given s = "hello", return "olleh". 
+// Given s = "hello", return "olleh".
 package String
+
+import "strings"
 
 func reverseString(s string) string {
 	var c = strings.Split(s, "")
