@@ -41,7 +41,7 @@ jobs:
   test:
     # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
     machine:
-      image: ubuntu-2004:202201-02
+      image: ubuntu-2204:edge
     working_directory: ~/project
     steps:
       - checkout
