@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   js-test:
     docker:
-      - image: gengjiawen/node-build:chrome
+      - image: node:lts
     working_directory: ~/repo
 
     steps:
