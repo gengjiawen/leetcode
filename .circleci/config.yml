@@ -68,4 +68,5 @@ workflows:
       - js-test
       - golang-test
       - java-test
+      - rust-test
       - test
