@@ -38,6 +38,15 @@ jobs:
       - checkout
       - run: chmod +x ./gradlew && ./gradlew assemble
 
+  rust-test:
+    docker:
+      - image: rust:latest
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: cargo test
+
   test:
     # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
     machine:
@@ -45,7 +54,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - run: 
+      - run:
           command: |
             npx envinfo
             docker login -u $DOCKER_USER -p $DOCKER_PASS
