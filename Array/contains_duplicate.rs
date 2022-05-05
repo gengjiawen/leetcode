@@ -19,8 +19,6 @@ pub fn contains_duplicate(nums: Vec<i32>) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use crate::contains_duplicate::contains_duplicate;
-
     use super::*;
 
     #[test]
