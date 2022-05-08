@@ -1,4 +1,5 @@
 mod contains_duplicate;
-mod longest_palindrome;
-mod maximum_average_subarray_i;
-mod length_of_longest_substring;
+mod _5_longest_palindrome;
+mod _643_maximum_average_subarray_i;
+mod _3_length_of_longest_substring;
+mod _159_longest_substring_with_at_most_two_distinc_characters;

@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
 // Input: s = "abcabcbb"
 // Output: 3
 // Explanation: The answer is "abc", with the length of 3.
@@ -22,12 +23,8 @@ pub fn length_of_longest_substring(s: String) -> i32 {
 
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    pub fn test() {
-        assert_eq!(length_of_longest_substring("abcabcbb".to_string()), 3);
-    }
+#[test]
+pub fn test() {
+    assert_eq!(length_of_longest_substring("abcabcbb".to_string()), 3);
+    assert_eq!(length_of_longest_substring("pwwkew".to_string()), 3);
 }
