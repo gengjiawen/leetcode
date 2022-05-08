@@ -5,10 +5,9 @@ fn length_of_longest_substring_two_distinct(s: String) -> i32 {
     let mut max = 0 as i32;
     // store char rightmost index
     let mut map = std::collections::HashMap::new();
-    for mut end in 0..str.len() {
+    for end in 0..str.len() {
         if map.len() < 3 {
             map.insert(str[end], end);
-            end += 1;
         }
         if map.len() == 3 {
             // delete the leftmost character
@@ -17,7 +16,7 @@ fn length_of_longest_substring_two_distinct(s: String) -> i32 {
             start = del_index + 1;
         }
 
-        max = std::cmp::max(max, (end - start) as i32);
+        max = std::cmp::max(max, (end - start + 1) as i32);
     }
 
     return max
