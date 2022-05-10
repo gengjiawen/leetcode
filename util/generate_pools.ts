@@ -44,20 +44,19 @@ function generatePool(config: CodeConfig) {
     records.forEach(i => {
       const p = i.get()
       //bypass paidOnly
-      if (p.paidOnly || p.urlContent === null) {
+      if (p.paidOnly) {
         return
       }
 
-      const data = JSON.parse(p.urlContent).data
       const { getCode, ext, comment, fileNameStyle } = config
       let code = undefined
       try {
-        code = getCode(JSON.parse(data.question.codeDefinition))
+        code = getCode(JSON.parse(p.codeDefinition))
       } catch (e) {
         return
       }
       const name = `pools/${fileNameStyle(p.title)}.${ext}`
-      const content = data.question.content
+      const content = p.content
       let description = toMarkdown(content, {
         gfm: true,
         converters: [
