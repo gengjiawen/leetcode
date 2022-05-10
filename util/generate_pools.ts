@@ -24,16 +24,24 @@ interface CodeConfig {
   comment: string
   fileNameStyle(s: string): string
 }
-const JSconfig: CodeConfig = {
+
+export const JSconfig: CodeConfig = {
   getCode: c => c.find(a => a.value === 'javascript').defaultCode,
   ext: 'js',
   comment: '//',
   fileNameStyle: s => s.replace(/[\s|?]/g, ''),
 }
 
-const Goconfig: CodeConfig = {
+export const Goconfig: CodeConfig = {
   getCode: c => c.find(a => a.value === 'golang').defaultCode,
   ext: 'go',
+  comment: '//',
+  fileNameStyle: underline,
+}
+
+export const Rust: CodeConfig = {
+  getCode: c => c.find(a => a.value === 'rust').defaultCode,
+  ext: 'rs',
   comment: '//',
   fileNameStyle: underline,
 }
@@ -86,4 +94,4 @@ function generatePool(config: CodeConfig) {
 }
 
 console.log('generate pools finished')
-generatePool(JSconfig)
+generatePool(Rust)
