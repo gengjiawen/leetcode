@@ -11,11 +11,3 @@ language.
 ![Leetcode](./leetcode.png?style=centerme)
 
 Just showoff I am a polyglot engineer.
-
-## prerequisite
-
-You can easily generate all the template code using `util/generate_pools.ts` for all your file.
-
-```bash
-ts-node ./util/generate_pools.ts
-```
