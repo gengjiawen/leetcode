@@ -5,4 +5,4 @@ mod _0209_minimum_size_subarray_sum;
 mod _0217_contains_duplicate;
 mod _0567_permutation_in_string;
 mod _0643_maximum_average_subarray_i;
-mod _1695_maximum_erasure_value;
+mod _0438_find_all_anagrams_in_a_string;
