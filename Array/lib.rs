@@ -1,6 +1,8 @@
-mod contains_duplicate;
-mod _5_longest_palindrome;
-mod _643_maximum_average_subarray_i;
-mod _3_length_of_longest_substring;
-mod _159_longest_substring_with_at_most_two_distinc_characters;
-mod _209_minimum_size_subarray_sum;
+mod _0003_length_of_longest_substring;
+mod _0005_longest_palindrome;
+mod _0159_longest_substring_with_at_most_two_distinc_characters;
+mod _0209_minimum_size_subarray_sum;
+mod _0217_contains_duplicate;
+mod _0567_permutation_in_string;
+mod _0643_maximum_average_subarray_i;
+mod _1695_maximum_erasure_value;
