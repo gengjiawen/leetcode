@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prettier": "prettier --write \"./**/*.{js,ts,yml}\" --ignore-path ./.prettierignore",
+    "generate": "ts-node util/generate_pools.ts",
     "clean": "rimraf build",
     "ts-build": "npm run clean && tsc -p ./tsconfig.json",
     "test": "jest"

@@ -1,7 +1,7 @@
 import * as toMarkdown from 'to-markdown'
+import {Converter} from 'to-markdown'
 import * as fs from 'fs-extra'
-import { Problem } from './crawl_leetcode'
-import { Converter } from 'to-markdown'
+import {Problem} from './crawl_leetcode'
 
 const converter_code: Converter = {
   filter: ['pre'],
@@ -22,7 +22,8 @@ interface CodeConfig {
   getCode(code: any[]): string
   ext: string
   comment: string
-  fileNameStyle(s: string): string
+
+  fileNameStyle(s: string, id: number): string
 }
 
 export const JSconfig: CodeConfig = {
@@ -43,12 +44,12 @@ export const Rust: CodeConfig = {
   getCode: c => c.find(a => a.value === 'rust').defaultCode,
   ext: 'rs',
   comment: '//',
-  fileNameStyle: underline,
+  fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
 }
 
 function generatePool(config: CodeConfig) {
-  fs.ensureDirSync('pools')
-  Problem.findAll().then((records: any[]) => {
+  fs.emptydirSync('pools')
+  Problem.findAll().then((records) => {
     records.forEach(i => {
       const p = i.get()
       //bypass paidOnly
@@ -56,14 +57,15 @@ function generatePool(config: CodeConfig) {
         return
       }
 
-      const { getCode, ext, comment, fileNameStyle } = config
-      let code = undefined
+      const {getCode, ext, comment, fileNameStyle} = config
+      let code: string;
       try {
-        code = getCode(JSON.parse(p.codeDefinition))
+        code = getCode(JSON.parse(p.codeDefinition));
       } catch (e) {
+        // not all languages have codeDefinition
         return
       }
-      const name = `pools/${fileNameStyle(p.title)}.${ext}`
+      const name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
       const content = p.content
       let description = toMarkdown(content, {
         gfm: true,
@@ -94,4 +96,4 @@ function generatePool(config: CodeConfig) {
 }
 
 console.log('generate pools finished')
-generatePool(Rust)
+generatePool(JSconfig)
