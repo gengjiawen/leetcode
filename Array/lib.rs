@@ -8,4 +8,6 @@ mod _0217_contains_duplicate;
 mod _0567_permutation_in_string;
 mod _0643_maximum_average_subarray_i;
 mod _0438_find_all_anagrams_in_a_string;
+mod _0487_max_consecutive_ones_ii;
+mod _1004_max_consecutive_ones_iii;
 mod _1695_maximum_erasure_value;

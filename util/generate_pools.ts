@@ -96,4 +96,4 @@ function generatePool(config: CodeConfig) {
 }
 
 console.log('generate pools finished')
-generatePool(JSconfig)
+generatePool(Rust)
