@@ -30,7 +30,7 @@ pub fn check_inclusion(s1: String, s2: String) -> bool {
     let mut s1_hash = std::collections::HashMap::new();
     let mut s2_hash = std::collections::HashMap::new();
 
-    let mut s2_vec: Vec<char> = s2.chars().collect();
+    let s2_vec: Vec<char> = s2.chars().collect();
     for ch in s1.chars() {
         *s1_hash.entry(ch).or_insert(0) += 1;
     }

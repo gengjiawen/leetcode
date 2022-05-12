@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 mod _0003_length_of_longest_substring;
 mod _0005_longest_palindrome;
 mod _0159_longest_substring_with_at_most_two_distinc_characters;

@@ -37,7 +37,7 @@ pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
     let mut s_hash = std::collections::HashMap::new();
     let mut p_hash = std::collections::HashMap::new();
 
-    let mut s_vec: Vec<char> = s.chars().collect();
+    let s_vec: Vec<char> = s.chars().collect();
     for ch in p.chars() {
         *p_hash.entry(ch).or_insert(0) += 1;
     }
