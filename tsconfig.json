@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2021",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": false,
@@ -15,7 +15,7 @@
     "strict": true,
     "outDir": "./build",
     "lib": [
-      "es2015",
+      "es2021",
       "dom"
     ]
   },

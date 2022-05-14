@@ -10,12 +10,13 @@ const converter_code: Converter = {
   },
 }
 
-function underline(s: string) {
+export function underline(s: string) {
   return s
-    .split(' ')
-    .map(a => a.toLowerCase())
-    .join('_')
-    .replace('?', '')
+      .split(' ')
+      .map(a => a.toLowerCase())
+      .join('_')
+      .replaceAll('?', '')
+      .replaceAll('-', '_')
 }
 
 interface CodeConfig {
