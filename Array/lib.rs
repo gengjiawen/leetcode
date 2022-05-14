@@ -11,3 +11,5 @@ mod _0438_find_all_anagrams_in_a_string;
 mod _0487_max_consecutive_ones_ii;
 mod _1004_max_consecutive_ones_iii;
 mod _1695_maximum_erasure_value;
+mod _1208_get_equal_substrings_within_budget;
+mod _1423_maximum_points_you_can_obtain_from_cards;
