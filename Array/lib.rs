@@ -13,3 +13,4 @@ mod _1004_max_consecutive_ones_iii;
 mod _1695_maximum_erasure_value;
 mod _1208_get_equal_substrings_within_budget;
 mod _1423_maximum_points_you_can_obtain_from_cards;
+mod _1052_grumpy_bookstore_owner;
