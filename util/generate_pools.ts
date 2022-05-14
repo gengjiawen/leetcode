@@ -53,12 +53,17 @@ function generatePool(config: CodeConfig) {
   Problem.findAll().then((records) => {
     records.forEach(i => {
       const p = i.get()
-      //bypass paidOnly
+      const {getCode, ext, comment, fileNameStyle} = config
+      const name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
       if (p.paidOnly) {
+        const fileContent = `${comment} ${p.url}\n`
+
+        fs.writeFile(name, fileContent, err => {
+          if (err) throw err
+        })
         return
       }
 
-      const {getCode, ext, comment, fileNameStyle} = config
       let code: string;
       try {
         code = getCode(JSON.parse(p.codeDefinition));
@@ -66,7 +71,6 @@ function generatePool(config: CodeConfig) {
         // not all languages have codeDefinition
         return
       }
-      const name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
       const content = p.content
       let description = toMarkdown(content, {
         gfm: true,
