@@ -14,3 +14,4 @@ mod _1695_maximum_erasure_value;
 mod _1208_get_equal_substrings_within_budget;
 mod _1423_maximum_points_you_can_obtain_from_cards;
 mod _1052_grumpy_bookstore_owner;
+mod _1151_minimum_swaps_to_group_all_1s_together;
