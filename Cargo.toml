@@ -1,2 +1,2 @@
 [workspace]
-members = ["Array"]
+members = ["Array", "DP"]

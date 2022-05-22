@@ -5,3 +5,7 @@ version = 3
 [[package]]
 name = "leetcode_array"
 version = "0.1.0"
+
+[[package]]
+name = "leetcode_dp"
+version = "0.1.0"
