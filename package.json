@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "lint-staged": "^12.3.4",
     "@types/async": "^3.2.13",
     "@types/fs-extra": "9.0.13",
