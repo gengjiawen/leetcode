@@ -26,8 +26,8 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxPathSum = function(root) {
-  const findMax = node => {
+var maxPathSum = function (root) {
+  const findMax = (node) => {
     if (node === null) {
       return 0
     }

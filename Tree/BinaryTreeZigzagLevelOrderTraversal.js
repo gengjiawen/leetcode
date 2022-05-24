@@ -34,7 +34,7 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var zigzagLevelOrder = function(root) {
+var zigzagLevelOrder = function (root) {
   const dfs = (array, node, level) => {
     if (node === null) {
       return null

@@ -34,7 +34,7 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrderBottom = function(root) {
+var levelOrderBottom = function (root) {
   const dfs = (array, node, level) => {
     if (node === null) {
       return null

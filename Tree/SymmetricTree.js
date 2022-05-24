@@ -31,7 +31,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isSymmetric = function(root) {
+var isSymmetric = function (root) {
   const isSym = (a, b) => {
     if (a === null && b === null) {
       return true

@@ -6,11 +6,11 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
+var longestCommonPrefix = function (strs) {
   if (strs === null || strs.length === 0) {
     return ''
   }
-  const min = Math.min(...strs.map(i => i.length))
+  const min = Math.min(...strs.map((i) => i.length))
   for (let i = 0; i < min; i++) {
     for (let j = 1; j < strs.length; j++) {
       if (strs[j][i] !== strs[0][i]) {

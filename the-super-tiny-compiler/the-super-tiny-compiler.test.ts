@@ -1,4 +1,9 @@
-import { codeGenerator, parser, tokenizer, transformer } from './the-super-tiny-compiler'
+import {
+  codeGenerator,
+  parser,
+  tokenizer,
+  transformer,
+} from './the-super-tiny-compiler'
 
 const input = '(add 2 (subtract 4 2))'
 const output = 'add(2, subtract(4, 2));'

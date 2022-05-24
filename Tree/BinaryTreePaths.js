@@ -31,7 +31,7 @@
  * @param {TreeNode} root
  * @return {string[]}
  */
-var binaryTreePaths = function(root) {
+var binaryTreePaths = function (root) {
   const helper = (node, result) => {
     if (node === null) {
       return null
@@ -55,5 +55,5 @@ var binaryTreePaths = function(root) {
 
   helper(root, [])
 
-  return r.map(i => i.join('->'))
+  return r.map((i) => i.join('->'))
 }

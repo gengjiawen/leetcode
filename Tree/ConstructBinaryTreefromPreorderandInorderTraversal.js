@@ -32,7 +32,7 @@
  * @param {number[]} inorder
  * @return {TreeNode}
  */
-var buildTree = function(preorder, inorder) {
+var buildTree = function (preorder, inorder) {
   if (preorder.length === 0) {
     return null
   }
@@ -40,7 +40,7 @@ var buildTree = function(preorder, inorder) {
   const root = preorder[0]
   const node = new TreeNode(root)
 
-  const index = inorder.findIndex(i => i === root)
+  const index = inorder.findIndex((i) => i === root)
   const leftInOrder = inorder.slice(0, index)
   const rightInOrder = inorder.slice(index + 1, inorder.length - 1)
 

@@ -47,8 +47,8 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isBalanced = function(root) {
-  const getHeight = node => {
+var isBalanced = function (root) {
+  const getHeight = (node) => {
     if (node === null) {
       return 0
     }

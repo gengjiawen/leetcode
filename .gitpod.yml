@@ -3,9 +3,7 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: yarn
-  - init: ./gradlew build
-  - init: go test ./...
-  - init: cargo test
-
-
+    - init: yarn
+    - init: ./gradlew build
+    - init: go test ./...
+    - init: cargo test

@@ -29,7 +29,7 @@
  * @param {number} sum
  * @return {boolean}
  */
-var hasPathSum = function(root, sum) {
+var hasPathSum = function (root, sum) {
   const f = (node, currentsSum, target) => {
     if (node === null) {
       return false

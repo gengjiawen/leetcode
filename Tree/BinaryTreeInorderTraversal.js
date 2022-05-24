@@ -28,7 +28,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
   const r = []
   if (root !== null) {
     if (root.left !== null) {

@@ -30,7 +30,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var sumNumbers = function(root) {
+var sumNumbers = function (root) {
   const helper = (node, result) => {
     if (node === null) {
       return null
@@ -54,5 +54,5 @@ var sumNumbers = function(root) {
 
   helper(root, [])
 
-  return r.map(i => i.join('')).reduce((a, b) => parseInt(b) + a, 0)
+  return r.map((i) => i.join('')).reduce((a, b) => parseInt(b) + a, 0)
 }

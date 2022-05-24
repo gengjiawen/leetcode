@@ -4,8 +4,10 @@
   "description": "My leetcode solutions.",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --write \"./**/*.{js,ts,yml}\" --ignore-path ./.prettierignore",
     "gen": "ts-node util/generate_pools.ts",
+    "prepare": "husky install",
+    "format": "prettier --write \"./**/*.{js,ts}\" \"**/*.yml\"",
+    "format:check": "prettier --list-different \"./**/*.{js,ts}\" \"**/*.yml\"",
     "clean": "rimraf build",
     "ts-build": "npm run clean && tsc -p ./tsconfig.json",
     "test": "jest"
@@ -34,7 +36,19 @@
       "^.+\\.tsx?$": "ts-jest"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md,css,html,yml}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
+    "husky": "7.0.4",
+    "lint-staged": "^12.3.4",
     "@types/async": "^3.2.13",
     "@types/fs-extra": "9.0.13",
     "@types/jest": "*",

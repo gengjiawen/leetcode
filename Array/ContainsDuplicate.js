@@ -6,7 +6,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
+var containsDuplicate = function (nums) {
   let s = new Set()
   for (let i of nums) {
     if (s.has(i)) {

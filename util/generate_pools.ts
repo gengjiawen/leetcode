@@ -1,22 +1,22 @@
 import * as toMarkdown from 'to-markdown'
-import {Converter} from 'to-markdown'
+import { Converter } from 'to-markdown'
 import * as fs from 'fs-extra'
-import {Problem} from './crawl_leetcode'
+import { Problem } from './crawl_leetcode'
 
 const converter_code: Converter = {
   filter: ['pre'],
-  replacement: function(content, node) {
+  replacement: function (content, node) {
     return '\n```\n' + content + '```\n'
   },
 }
 
 export function underline(s: string) {
   return s
-      .split(' ')
-      .map(a => a.toLowerCase())
-      .join('_')
-      .replaceAll('?', '')
-      .replaceAll('-', '_')
+    .split(' ')
+    .map((a) => a.toLowerCase())
+    .join('_')
+    .replaceAll('?', '')
+    .replaceAll('-', '_')
 }
 
 interface CodeConfig {
@@ -28,21 +28,21 @@ interface CodeConfig {
 }
 
 export const JSconfig: CodeConfig = {
-  getCode: c => c.find(a => a.value === 'javascript').defaultCode,
+  getCode: (c) => c.find((a) => a.value === 'javascript').defaultCode,
   ext: 'js',
   comment: '//',
-  fileNameStyle: s => s.replace(/[\s|?]/g, ''),
+  fileNameStyle: (s) => s.replace(/[\s|?]/g, ''),
 }
 
 export const Goconfig: CodeConfig = {
-  getCode: c => c.find(a => a.value === 'golang').defaultCode,
+  getCode: (c) => c.find((a) => a.value === 'golang').defaultCode,
   ext: 'go',
   comment: '//',
   fileNameStyle: underline,
 }
 
 export const Rust: CodeConfig = {
-  getCode: c => c.find(a => a.value === 'rust').defaultCode,
+  getCode: (c) => c.find((a) => a.value === 'rust').defaultCode,
   ext: 'rs',
   comment: '//',
   fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
@@ -51,22 +51,22 @@ export const Rust: CodeConfig = {
 function generatePool(config: CodeConfig) {
   fs.emptydirSync('pools')
   Problem.findAll().then((records) => {
-    records.forEach(i => {
+    records.forEach((i) => {
       const p = i.get()
-      const {getCode, ext, comment, fileNameStyle} = config
+      const { getCode, ext, comment, fileNameStyle } = config
       const name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
       if (p.paidOnly) {
         const fileContent = `${comment} ${p.url}\n`
 
-        fs.writeFile(name, fileContent, err => {
+        fs.writeFile(name, fileContent, (err) => {
           if (err) throw err
         })
         return
       }
 
-      let code: string;
+      let code: string
       try {
-        code = getCode(JSON.parse(p.codeDefinition));
+        code = getCode(JSON.parse(p.codeDefinition))
       } catch (e) {
         // not all languages have codeDefinition
         return
@@ -77,7 +77,7 @@ function generatePool(config: CodeConfig) {
         converters: [
           {
             filter: ['div'],
-            replacement: function(content) {
+            replacement: function (content) {
               return content
             },
           },
@@ -93,7 +93,7 @@ function generatePool(config: CodeConfig) {
 
       const fileContent = `${comment} ${p.url}\n${description}\n\n${code}`
 
-      fs.writeFile(name, fileContent, err => {
+      fs.writeFile(name, fileContent, (err) => {
         if (err) throw err
       })
     })

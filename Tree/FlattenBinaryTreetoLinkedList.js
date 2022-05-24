@@ -45,8 +45,8 @@
  * @param {TreeNode} root
  * @return {void} Do not return anything, modify root in-place instead.
  */
-var flatten = function(root) {
-  const preOrder = node => {
+var flatten = function (root) {
+  const preOrder = (node) => {
     if (node === null) {
       return
     }

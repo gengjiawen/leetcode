@@ -40,7 +40,7 @@
  * @param {number} sum
  * @return {number}
  */
-var pathSum = function(root, sum) {
+var pathSum = function (root, sum) {
   const helper = (node, sum) => {
     if (node === null) {
       return 0

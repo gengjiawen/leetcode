@@ -29,7 +29,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function(root) {
+var rightSideView = function (root) {
   const dfs = (array, node, level) => {
     if (node === null) {
       return null

@@ -1,72 +1,72 @@
 version: 2.1
 
 jobs:
-  js-test:
-    docker:
-      - image: node:lts
-    working_directory: ~/repo
+    js-test:
+        docker:
+            - image: node:lts
+        working_directory: ~/repo
 
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: npx envinfo
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+                      - v1-dependencies-
+            - run: npx envinfo
+            - run: yarn install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "package.json" }}
+            - run: yarn test
 
-  golang-test:
-    docker:
-      - image: golang:latest
-    working_directory: ~/repo
+    golang-test:
+        docker:
+            - image: golang:latest
+        working_directory: ~/repo
 
-    steps:
-      - checkout
-      - run: go test -v ./...
+        steps:
+            - checkout
+            - run: go test -v ./...
 
-  java-test:
-    docker:
-      - image: openjdk:17
-    working_directory: ~/repo
+    java-test:
+        docker:
+            - image: openjdk:17
+        working_directory: ~/repo
 
-    steps:
-      - checkout
-      - run: chmod +x ./gradlew && ./gradlew assemble
+        steps:
+            - checkout
+            - run: chmod +x ./gradlew && ./gradlew assemble
 
-  rust-test:
-    docker:
-      - image: rust:latest
-    working_directory: ~/repo
+    rust-test:
+        docker:
+            - image: rust:latest
+        working_directory: ~/repo
 
-    steps:
-      - checkout
-      - run: cargo test
+        steps:
+            - checkout
+            - run: cargo test
 
-  test:
-    # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
-    machine:
-      image: ubuntu-2204:edge
-    working_directory: ~/project
-    steps:
-      - checkout
-      - run:
-          command: |
-            npx envinfo
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            echo "hello world"
-            sudo apt-get update
-            sudo apt-get install fish -y
+    test:
+        # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
+        machine:
+            image: ubuntu-2204:edge
+        working_directory: ~/project
+        steps:
+            - checkout
+            - run:
+                  command: |
+                      npx envinfo
+                      docker login -u $DOCKER_USER -p $DOCKER_PASS
+                      echo "hello world"
+                      sudo apt-get update
+                      sudo apt-get install fish -y
 
 workflows:
-  leetcode:
-    jobs:
-      - js-test
-      - golang-test
-      - java-test
-      - rust-test
-      - test
+    leetcode:
+        jobs:
+            - js-test
+            - golang-test
+            - java-test
+            - rust-test
+            - test

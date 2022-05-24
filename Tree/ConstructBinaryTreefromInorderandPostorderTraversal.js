@@ -33,7 +33,7 @@
  * @param {number[]} postorder
  * @return {TreeNode}
  */
-var buildTree = function(inorder, postorder) {
+var buildTree = function (inorder, postorder) {
   if (postorder.length === 0) {
     return null
   }
@@ -41,14 +41,14 @@ var buildTree = function(inorder, postorder) {
   const root = postorder[postorder.length - 1]
   const node = new TreeNode(root)
 
-  const index = inorder.findIndex(i => i === root)
+  const index = inorder.findIndex((i) => i === root)
   const leftInOrder = inorder.slice(0, index)
   const rightInOrder = inorder.slice(index + 1, inorder.length)
 
   const leftInPostOrder = postorder.slice(0, leftInOrder.length)
   const rightPostOrder = postorder.slice(
     leftInOrder.length + 1,
-    postorder.length - 1
+    postorder.length - 1,
   )
 
   node.left = buildTree(leftInOrder, leftInPostOrder)

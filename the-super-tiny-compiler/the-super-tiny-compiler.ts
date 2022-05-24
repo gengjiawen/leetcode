@@ -173,7 +173,7 @@ interface Visitor {
 
 export function traverser(ast: Node, visitor: Visitor) {
   function traverseArray(array: Node[], parent: Node | null) {
-    array.forEach(child => {
+    array.forEach((child) => {
       traverseNode(child, parent)
     })
   }

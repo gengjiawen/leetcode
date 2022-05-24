@@ -38,7 +38,7 @@ import { Treenode } from './ModelDefinition/TreeNode'
  * @param {ListNode} head
  * @return {TreeNode}
  */
-var sortedListToBST = function(head) {
+var sortedListToBST = function (head) {
   const buildBST = (start, end) => {
     if (start === end) {
       return null

@@ -37,7 +37,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isValidBST = function(root) {
+var isValidBST = function (root) {
   const helper = (node, min, max) => {
     if (node === null) {
       return true

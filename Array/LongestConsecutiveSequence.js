@@ -12,7 +12,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var longestConsecutive = function(nums) {
+var longestConsecutive = function (nums) {
   let maxLength = 0
   const s = new Set(nums)
   for (let i = 0; i < nums.length; i++) {
