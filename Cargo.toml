@@ -1,2 +1,2 @@
 [workspace]
-members = ["Array", "DP"]
+members = ["Array", "DP", "backtracing", "sliding_window"]

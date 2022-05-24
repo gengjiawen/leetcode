@@ -7,5 +7,13 @@ name = "leetcode_array"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode_backtracing"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode_dp"
+version = "0.1.0"
+
+[[package]]
+name = "leetcode_sliding_window"
 version = "0.1.0"
