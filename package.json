@@ -47,8 +47,6 @@
     ]
   },
   "devDependencies": {
-    "husky": "8.0.1",
-    "lint-staged": "^12.3.4",
     "@types/async": "^3.2.13",
     "@types/fs-extra": "9.0.13",
     "@types/jest": "*",
@@ -56,9 +54,12 @@
     "@types/rimraf": "3.0.2",
     "@types/sequelize": "^4.28.10",
     "@types/to-markdown": "3.0.1",
+    "husky": "8.0.1",
     "jest": "27.3.1",
+    "lint-staged": "^12.3.4",
     "nodemon": "2.0.15",
     "prettier": "2.6.2",
+    "prettier-plugin-toml": "^0.3.1",
     "rimraf": "3.0.2",
     "ts-jest": "27.0.7",
     "ts-node": "10.4.0",
