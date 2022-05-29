@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`extract rust solutions 1`] = `
+"pub fn climb_stairs(n: i32) -> i32 {
+
+    }"
+`;

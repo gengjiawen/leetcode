@@ -1,8 +1,8 @@
 import * as toMarkdown from 'to-markdown'
 import { Converter } from 'to-markdown'
 import * as fs from 'fs-extra'
-import {Problem} from './crawl_leetcode'
-import {extract_rust_solution, underline} from './utils'
+import { Problem } from './crawl_leetcode'
+import { extract_rust_solution, underline } from './utils'
 
 const converter_code: Converter = {
   filter: ['pre'],
@@ -49,24 +49,24 @@ export const Rust: CodeConfig = {
   fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
   patchCode: extract_rust_solution,
   test: (meta) => {
-    const {code} = meta
-    meta.code = `${code}
+    const { code } = meta
+    meta.code = `${code}\n
 #[test]
 pub fn t1() {
 }
 `
     return meta
-  }
+  },
 }
 
 async function generatePool(config: CodeConfig, test: boolean = false) {
   fs.emptydirSync('pools')
   const problems = await Problem.findAll({
-    limit: test ? 1 : undefined,
+    limit: test ? 2 : undefined,
   })
   problems.forEach((i) => {
     const p = i.get()
-    const {getCode, ext, comment, fileNameStyle} = config
+    const { getCode, ext, comment, fileNameStyle } = config
     const file_name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
     if (p.paidOnly) {
       const fileContent = `${comment} ${p.url}\n`
@@ -98,18 +98,18 @@ async function generatePool(config: CodeConfig, test: boolean = false) {
       ],
     })
     description = description
-        .trim()
-        .split('\n')
-        .reduce((sum, value) => {
-          return `${sum}\n${comment} ${value}`
-        }, `${comment} `)
+      .trim()
+      .split('\n')
+      .reduce((sum, value) => {
+        return `${sum}\n${comment} ${value}`
+      }, `${comment} `)
 
     let codeContent = config.patchCode ? config.patchCode(code) : code
     const finalFile = {
-      codeContent
+      codeContent,
     }
     if (config.test) {
-      const t = {code: codeContent}
+      const t = { code: codeContent }
       config.test(t)
       codeContent = t.code
     }

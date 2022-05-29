@@ -1,4 +1,4 @@
-import {extract_rust_solution, underline} from './utils'
+import { extract_rust_solution, underline } from './utils'
 
 test('test underline filename', () => {
   const a = underline('minimum-swaps-to-group-all-1s-together')
@@ -20,7 +20,7 @@ test('reference test', () => {
     o.str += '__append'
   }
 
-  const o = {str: 'hi'}
+  const o = { str: 'hi' }
   append_str(o)
   console.log(o)
 })
