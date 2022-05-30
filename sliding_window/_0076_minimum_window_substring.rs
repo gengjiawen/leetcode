@@ -54,7 +54,10 @@ pub fn min_window(s: String, t: String) -> String {
         *t_hash.entry(ch).or_insert(0) += 1;
     }
 
-    fn is_valid(s_hash: &std::collections::HashMap<char, i32>, t_hash: &std::collections::HashMap<char, i32>) -> bool {
+    fn is_valid(
+        s_hash: &std::collections::HashMap<char, i32>,
+        t_hash: &std::collections::HashMap<char, i32>,
+    ) -> bool {
         for (&key, &value) in t_hash {
             if s_hash.get(&key).unwrap_or(&0) < &value {
                 return false;
@@ -92,7 +95,13 @@ pub fn min_window(s: String, t: String) -> String {
 
 #[test]
 fn test() {
-    assert_eq!(min_window("ADOBECODEBANC".to_string(), "ABC".to_string()), "BANC");
-    assert_eq!(min_window("cabwefgewcwaefgcf".to_string(), "cae".to_string()), "cwae");
+    assert_eq!(
+        min_window("ADOBECODEBANC".to_string(), "ABC".to_string()),
+        "BANC"
+    );
+    assert_eq!(
+        min_window("cabwefgewcwaefgcf".to_string(), "cae".to_string()),
+        "cwae"
+    );
     assert_eq!(min_window("a".to_string(), "aa".to_string()), "");
 }
