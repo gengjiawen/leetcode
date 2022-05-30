@@ -60,7 +60,14 @@ pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, minutes: i32) -> i32
 
 #[test]
 pub fn test() {
-    assert_eq!(max_satisfied(vec![1, 0, 1, 2, 1, 1, 7, 5], vec![0, 1, 0, 1, 0, 1, 0, 1], 3), 16);
+    assert_eq!(
+        max_satisfied(
+            vec![1, 0, 1, 2, 1, 1, 7, 5],
+            vec![0, 1, 0, 1, 0, 1, 0, 1],
+            3
+        ),
+        16
+    );
     assert_eq!(max_satisfied(vec![1], vec![0], 1), 1);
     assert_eq!(max_satisfied(vec![2, 6, 6, 9], vec![0, 0, 1, 1], 1), 17);
 }

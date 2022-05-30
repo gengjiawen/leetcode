@@ -17,7 +17,6 @@ pub fn contains_duplicate(nums: Vec<i32>) -> bool {
     return false;
 }
 
-
 #[test]
 pub fn test() {
     assert_eq!(contains_duplicate(Vec::from([1, 2])), false);

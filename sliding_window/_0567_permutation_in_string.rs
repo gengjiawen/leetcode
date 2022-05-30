@@ -57,5 +57,8 @@ pub fn check_inclusion(s1: String, s2: String) -> bool {
 
 #[test]
 pub fn test() {
-    assert_eq!(check_inclusion("ab".to_string(), "eidbaooo".to_string()), true);
+    assert_eq!(
+        check_inclusion("ab".to_string(), "eidbaooo".to_string()),
+        true
+    );
 }

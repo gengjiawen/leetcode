@@ -62,6 +62,8 @@ pub fn equal_substring(s: String, t: String, max_cost: i32) -> i32 {
 
 #[test]
 pub fn test() {
-    assert_eq!(equal_substring("abcd".to_string(), "bcdf".to_string(), 3), 3);
+    assert_eq!(
+        equal_substring("abcd".to_string(), "bcdf".to_string(), 3),
+        3
+    );
 }
-

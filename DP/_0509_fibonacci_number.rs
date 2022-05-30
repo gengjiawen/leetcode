@@ -47,7 +47,7 @@ pub fn fib(n: i32) -> i32 {
         r[i as usize] = r[(i - 1) as usize] + r[(i - 2) as usize]
     }
 
-    return r[n as usize]
+    return r[n as usize];
 }
 
 #[test]

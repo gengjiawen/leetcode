@@ -56,4 +56,3 @@ pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
 pub fn test() {
     assert_eq!(max_score(vec![1, 2, 3, 4, 5, 6, 1], 3), 12);
 }
-

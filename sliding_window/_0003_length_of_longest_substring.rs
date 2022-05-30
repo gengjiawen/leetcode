@@ -3,7 +3,6 @@
 // Output: 3
 // Explanation: The answer is "abc", with the length of 3.
 
-
 pub fn length_of_longest_substring(s: String) -> i32 {
     let str: Vec<char> = s.chars().collect();
     let mut start = 0;
@@ -20,7 +19,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
         map.insert(str[end], end);
     }
 
-    return max
+    return max;
 }
 
 #[test]

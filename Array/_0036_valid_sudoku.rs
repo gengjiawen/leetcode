@@ -67,16 +67,15 @@ pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
             if !columns[j].insert(c) {
                 return false;
             }
-            let k = (i/3)*3 + j/3;
+            let k = (i / 3) * 3 + j / 3;
             if !squars[k].insert(c) {
                 return false;
             }
         }
     }
 
-    return true
+    return true;
 }
-
 
 #[test]
 fn test() {
@@ -89,7 +88,7 @@ fn test() {
         vec!['7', '.', '.', '.', '2', '.', '.', '.', '6'],
         vec!['.', '6', '.', '.', '.', '.', '2', '8', '.'],
         vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
-        vec!['.', '.', '.', '.', '8', '.', '.', '7', '9']
+        vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
     ];
     assert_eq!(is_valid_sudoku(board), true);
     let board = vec![
@@ -101,7 +100,7 @@ fn test() {
         vec!['7', '.', '.', '.', '2', '.', '.', '.', '6'],
         vec!['.', '6', '.', '.', '.', '.', '2', '8', '.'],
         vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
-        vec!['.', '.', '.', '.', '8', '.', '.', '7', '9']
+        vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
     ];
     assert_eq!(is_valid_sudoku(board), false);
 }

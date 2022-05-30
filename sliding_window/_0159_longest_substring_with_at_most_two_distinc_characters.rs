@@ -19,11 +19,17 @@ fn length_of_longest_substring_two_distinct(s: String) -> i32 {
         max = std::cmp::max(max, (end - start + 1) as i32);
     }
 
-    return max
+    return max;
 }
 
 #[test]
 fn test() {
-    assert_eq!(length_of_longest_substring_two_distinct("eceba".to_string()), 3);
-    assert_eq!(length_of_longest_substring_two_distinct("ccaabbb".to_string()), 5);
+    assert_eq!(
+        length_of_longest_substring_two_distinct("eceba".to_string()),
+        3
+    );
+    assert_eq!(
+        length_of_longest_substring_two_distinct("ccaabbb".to_string()),
+        5
+    );
 }

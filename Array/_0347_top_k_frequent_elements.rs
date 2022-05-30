@@ -35,7 +35,12 @@ pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
     for (&key, &value) in count.iter() {
         bucket[value as usize].push(*key);
     }
-    return bucket.into_iter().rev().flatten().take(k as usize).collect();
+    return bucket
+        .into_iter()
+        .rev()
+        .flatten()
+        .take(k as usize)
+        .collect();
 }
 
 #[test]

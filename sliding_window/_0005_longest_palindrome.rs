@@ -15,7 +15,7 @@ use std::ops::Range;
 
 pub fn longest_palindrome(s: String) -> String {
     if s.len() <= 1 {
-        return s
+        return s;
     }
 
     fn palindrome(s: &str, left: usize, right: usize) -> Range<usize> {
@@ -37,12 +37,15 @@ pub fn longest_palindrome(s: String) -> String {
         let s1 = palindrome(&s, i, i);
         // s[i], s[i+1] centered longest palindrome (cbbd -> bb)0
         let s2 = palindrome(&s, i, i + 1);
-        longest_palindrome = [s1, s2, longest_palindrome.clone()].iter().max_by_key(|x| x.end - x.start).unwrap().clone();
+        longest_palindrome = [s1, s2, longest_palindrome.clone()]
+            .iter()
+            .max_by_key(|x| x.end - x.start)
+            .unwrap()
+            .clone();
     }
 
     return s[longest_palindrome.start..longest_palindrome.end].to_string();
 }
-
 
 #[cfg(test)]
 mod tests {

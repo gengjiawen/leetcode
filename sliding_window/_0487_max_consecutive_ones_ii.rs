@@ -19,7 +19,6 @@ pub fn longest_ones(nums: Vec<i32>) -> i32 {
             *map.entry(head_val).or_insert(0) -= 1;
             start += 1;
         }
-
     }
 
     return max_len as i32;
@@ -27,5 +26,5 @@ pub fn longest_ones(nums: Vec<i32>) -> i32 {
 
 #[test]
 pub fn test() {
-    assert_eq!(longest_ones(vec![1,0,1,1,0]), 4);
+    assert_eq!(longest_ones(vec![1, 0, 1, 1, 0]), 4);
 }
