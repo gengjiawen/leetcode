@@ -3,7 +3,7 @@ import Sequelize from 'sequelize'
 import * as path from 'path'
 import async from 'async'
 
-const sequelize = new Sequelize.Sequelize('leetcode', 'null', 'null', {
+export const sequelize = new Sequelize.Sequelize('leetcode', 'null', 'null', {
   dialect: 'sqlite',
   define: {
     timestamps: true,

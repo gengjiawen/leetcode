@@ -1,4 +1,5 @@
 import { extract_rust_solution, underline } from './utils'
+import { sequelize } from './crawl_leetcode'
 
 test('test underline filename', () => {
   const a = underline('minimum-swaps-to-group-all-1s-together')
@@ -23,4 +24,15 @@ test('reference test', () => {
   const o = { str: 'hi' }
   append_str(o)
   console.log(o)
+})
+
+test('leetcode statistics', async () => {
+  const r = await sequelize.query(
+    `select difficulty, count(*) from leetcode group by difficulty;`,
+  )
+  console.log(`easy medium hard`, r[0])
+  const paidCount = await sequelize.query(
+    `select count(*) from leetcode where paidOnly == 1;`,
+  )
+  console.log(`paid count`, paidCount[0])
 })
