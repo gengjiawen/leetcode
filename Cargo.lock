@@ -7,7 +7,7 @@ name = "leetcode_array"
 version = "0.1.0"
 
 [[package]]
-name = "leetcode_backtracing"
+name = "leetcode_backtracking"
 version = "0.1.0"
 
 [[package]]
