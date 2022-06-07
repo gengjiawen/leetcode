@@ -6,7 +6,8 @@ pub fn largest_subarray(nums: Vec<i32>, k: i32) -> Vec<i32> {
         .iter()
         .enumerate()
         .max_by(|x, y| x.1.cmp(&y.1))
-        .unwrap().0;
+        .unwrap()
+        .0;
 
     return nums[index..(index + k as usize)].to_vec();
 }
@@ -16,16 +17,13 @@ pub fn largest_subarray_slow(nums: Vec<i32>, k: i32) -> Vec<i32> {
     return (0..nums.len())
         .collect::<Vec<usize>>()
         .iter()
-        .fold(
-            vec![],
-            |mut acc, index | {
-                if index + k as usize <= nums.len() {
-                    let sub = nums[*index..(index + k as usize)].to_vec();
-                    acc.push(sub);
-                }
-                acc
-            },
-        )
+        .fold(vec![], |mut acc, index| {
+            if index + k as usize <= nums.len() {
+                let sub = nums[*index..(index + k as usize)].to_vec();
+                acc.push(sub);
+            }
+            acc
+        })
         .iter()
         .max_by(|x, y| {
             for i in 0..k as usize {
