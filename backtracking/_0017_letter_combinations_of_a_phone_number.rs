@@ -32,8 +32,6 @@
 // *   `0 <= digits.length <= 4`
 // *   `digits[i]` is a digit in the range `['2', '9']`.
 
-
-
 pub fn letter_combinations(digits: String) -> Vec<String> {
     if digits == "" {
         return vec![];
@@ -76,5 +74,8 @@ pub fn letter_combinations(digits: String) -> Vec<String> {
 
 #[test]
 pub fn t1() {
-    assert_eq!(letter_combinations("23".to_string()), vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]);
+    assert_eq!(
+        letter_combinations("23".to_string()),
+        vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    );
 }

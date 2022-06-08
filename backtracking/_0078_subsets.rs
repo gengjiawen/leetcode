@@ -40,7 +40,6 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     return res;
 }
 
-
 #[test]
 pub fn t1() {
     assert_eq!(
