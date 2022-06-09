@@ -24,7 +24,6 @@
 // *   `-10 <= nums[i] <= 10`
 // *   All the numbers of `nums` are **unique**.
 
-use std::collections::HashSet;
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let mut cur = vec![];
@@ -46,7 +45,7 @@ pub fn t1() {
         subsets(vec![1, 2, 3])
             .iter()
             .cloned()
-            .collect::<HashSet<Vec<i32>>>(),
+            .collect::<std::collections::HashSet<Vec<i32>>>(),
         vec![
             vec![],
             vec![1],
@@ -59,6 +58,6 @@ pub fn t1() {
         ]
         .iter()
         .cloned()
-        .collect::<HashSet<Vec<i32>>>()
+        .collect::<std::collections::HashSet<Vec<i32>>>()
     );
 }
