@@ -39,7 +39,6 @@
 // *   `1 <= target <= 500`
 
 pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    let mut res = Vec::new();
     fn backtrace(
         res: &mut Vec<Vec<i32>>,
         cur: &mut Vec<i32>,
@@ -51,9 +50,6 @@ pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
             return;
         }
         if target == 0 {
-            if cur.clone() == vec![2, 3, 3] {
-                println!("{:?}", cur);
-            }
             res.push(cur.clone());
             return;
         }
@@ -69,6 +65,7 @@ pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
         backtrace(res, cur, candidates, target - candidates[start], start);
         cur.pop();
     }
+    let mut res = Vec::new();
     backtrace(&mut res, &mut vec![], &candidates, target, 0);
     return res;
 }
