@@ -34,7 +34,7 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
             cur.pop();
         }
     }
-    backtrack(&mut res, &mut cur, &nums, 0);
+    backtrack(&mut res, &mut vec![], &nums, 0);
     return res;
 }
 
