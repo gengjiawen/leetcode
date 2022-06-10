@@ -26,15 +26,15 @@
 
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
-    fn backtrack(res: &mut Vec<Vec<i32>>, cur: &mut Vec<i32>, nums: &Vec<i32>, start: usize) {
+    fn backtrack(res: &mut Vec<Vec<i32>>, nums: &Vec<i32>, cur: &mut Vec<i32>, start: usize) {
         res.push(cur.clone());
         for i in start..nums.len() {
             cur.push(nums[i]);
-            backtrack(res, cur, nums, i + 1);
+            backtrack(res, nums, cur, i + 1);
             cur.pop();
         }
     }
-    backtrack(&mut res, &mut vec![], &nums, 0);
+    backtrack(&mut res, &nums, &mut vec![], 0);
     return res;
 }
 

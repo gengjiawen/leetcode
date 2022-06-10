@@ -25,7 +25,12 @@
 // *   `-10 <= nums[i] <= 10`
 
 pub fn permute_unique(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    fn backtrack(nums: &Vec<i32>, cur: &mut Vec<i32>, used: &mut Vec<bool>, res: &mut Vec<Vec<i32>>) {
+    fn backtrack(
+        nums: &Vec<i32>,
+        cur: &mut Vec<i32>,
+        used: &mut Vec<bool>,
+        res: &mut Vec<Vec<i32>>,
+    ) {
         if cur.len() == nums.len() {
             res.push(cur.clone());
             return;
@@ -44,13 +49,21 @@ pub fn permute_unique(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let mut sorted_num = nums.clone();
     sorted_num.sort();
-    backtrack(&sorted_num, &mut vec![], &mut vec![false; nums.len()], &mut res);
+    backtrack(
+        &sorted_num,
+        &mut vec![],
+        &mut vec![false; nums.len()],
+        &mut res,
+    );
     return res;
 }
 
 #[test]
 pub fn t1() {
-    assert_eq!(permute_unique(vec![1, 1, 2]), vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]]);
+    assert_eq!(
+        permute_unique(vec![1, 1, 2]),
+        vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]]
+    );
 }
 
 #[test]
