@@ -49,7 +49,7 @@ pub fn sort_sentence(s: String) -> String {
             |mut acc, (word, index)| {
                 acc.insert(index, word.clone());
                 return acc;
-            }
+            },
         )
         .iter()
         .map(|(_, word)| word.clone())
