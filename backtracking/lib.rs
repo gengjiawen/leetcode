@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 mod _0017_letter_combinations_of_a_phone_number;
+mod _0037_sudoku_solver;
 mod _0039_combination_sum;
 mod _0046_permutations;
 mod _0047_permutations_ii;
