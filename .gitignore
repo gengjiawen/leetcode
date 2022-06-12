@@ -14,3 +14,5 @@ package-lock.json
 .gradle/
 
 target/
+.env
+quick-dive-in.json

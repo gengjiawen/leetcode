@@ -59,16 +59,26 @@ pub fn t1() {
   },
 }
 
-async function generatePool(config: CodeConfig, test: boolean = false) {
+export async function generatePool({
+  config = Rust,
+  test = false,
+  problems = [],
+}: {
+  config?: CodeConfig
+  test?: boolean
+  problems?: any[]
+}) {
   fs.emptydirSync('pools')
-  const problems = await Problem.findAll({
-    limit: test ? 2 : undefined,
-  })
+  if (!problems) {
+    problems = await Problem.findAll({
+      limit: test ? 2 : undefined,
+    })
+  }
   problems.forEach((i) => {
     const p = i.get()
     const { getCode, ext, comment, fileNameStyle } = config
     const file_name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
-    if (p.paidOnly) {
+    if (p.paidOy) {
       const fileContent = `${comment} ${p.url}\n`
 
       fs.writeFile(file_name, fileContent, (err) => {
@@ -124,4 +134,4 @@ async function generatePool(config: CodeConfig, test: boolean = false) {
 console.log('generate pools finished')
 let test = false
 process.argv.includes('--test') && (test = true)
-generatePool(Rust, test)
+generatePool({ config: Rust, test: test }).catch(console.error)

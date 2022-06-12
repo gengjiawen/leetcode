@@ -23,7 +23,7 @@ export const Problem = sequelize.define('leetcode', {
   paidOnly: { type: Sequelize.BOOLEAN },
 })
 
-Problem.sync()
+Problem.sync().catch((err) => console.log(err))
 
 async function getQuestionDetail(title_slug: string) {
   const url = `https://leetcode.cn/graphql`
