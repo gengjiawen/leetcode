@@ -36,3 +36,6 @@ mod _2114_maximum_number_of_words_found_in_sentences;
 mod _2160_minimum_sum_of_four_digit_number_after_splitting_digits;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
+
+mod _0804_unique_morse_code_words;
+mod _0832_flipping_an_image;
