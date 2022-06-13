@@ -69,7 +69,7 @@ export async function generatePool({
   problems?: any[]
 }) {
   fs.emptydirSync('pools')
-  if (!problems) {
+  if (!problems || problems.length === 0) {
     problems = await Problem.findAll({
       limit: test ? 2 : undefined,
     })
