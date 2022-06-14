@@ -39,3 +39,6 @@ mod _2235_add_two_integers;
 
 mod _0804_unique_morse_code_words;
 mod _0832_flipping_an_image;
+
+mod _0883_projection_area_of_3d_shapes;
+mod _1732_find_the_highest_altitude;
