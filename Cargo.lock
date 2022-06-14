@@ -15,6 +15,10 @@ name = "leetcode_dp"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode_greedy"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode_sliding_window"
 version = "0.1.0"
 
