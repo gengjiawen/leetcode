@@ -3,6 +3,9 @@
 mod _0036_valid_sudoku;
 mod _0347_top_k_frequent_elements;
 mod _0760_find_anagram_mappings;
+mod _0804_unique_morse_code_words;
+mod _0832_flipping_an_image;
+mod _0883_projection_area_of_3d_shapes;
 mod _1085_sum_of_digits_in_the_minimum_number;
 mod _1108_defanging_an_ip_address;
 mod _1133_largest_unique_number;
@@ -26,6 +29,8 @@ mod _1672_richest_customer_wealth;
 mod _1684_count_the_number_of_consistent_strings;
 mod _1708_largest_subarray_length_k;
 mod _1720_decode_xored_array;
+mod _1732_find_the_highest_altitude;
+mod _1748_sum_of_unique_elements;
 mod _1773_count_items_matching_a_rule;
 mod _1816_truncate_sentence;
 mod _1913_maximum_product_difference_between_two_pairs;
@@ -36,9 +41,3 @@ mod _2114_maximum_number_of_words_found_in_sentences;
 mod _2160_minimum_sum_of_four_digit_number_after_splitting_digits;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
-
-mod _0804_unique_morse_code_words;
-mod _0832_flipping_an_image;
-
-mod _0883_projection_area_of_3d_shapes;
-mod _1732_find_the_highest_altitude;
