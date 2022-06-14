@@ -4,7 +4,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import { Problem } from './crawl_leetcode'
 import { Op } from 'sequelize'
-import { generatePool } from './generate_pools'
+import { generatePool } from './pools_utils'
 
 dotenv.config()
 
@@ -60,7 +60,7 @@ export function getEasyList() {
     data: data,
   }
 
-  axios(config)
+  return axios(config)
     .then((response) => {
       fs.writeFileSync(quickFileName, JSON.stringify(response.data, null, 2))
     })
@@ -82,6 +82,7 @@ export async function genList() {
       parseInt(item.frontendQuestionId),
     )
 
+  console.log(`problem_list ${problem_list.length}`)
   const r = await Problem.findAll({
     where: {
       frontend_id: {
@@ -93,4 +94,6 @@ export async function genList() {
   await generatePool({
     problems: r,
   })
+
+  return problem_list
 }

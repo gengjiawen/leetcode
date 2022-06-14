@@ -2,7 +2,7 @@ import { genList, getEasyList, quickFileName } from './get_easy_list'
 import * as fs from 'fs'
 
 test('test get easy list', async () => {
-  const r = getEasyList()
+  const r = await getEasyList()
   console.log(r)
 })
 
