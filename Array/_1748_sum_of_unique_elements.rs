@@ -33,7 +33,6 @@
 // *   `1 <= nums.length <= 100`
 // *   `1 <= nums[i] <= 100`
 
-
 pub fn sum_of_unique(nums: Vec<i32>) -> i32 {
     return nums
         .iter()
