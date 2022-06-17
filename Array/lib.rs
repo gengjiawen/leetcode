@@ -44,6 +44,7 @@ mod _1979_find_greatest_common_divisor_of_array;
 mod _2011_final_value_of_variable_after_performing_operations;
 mod _2114_maximum_number_of_words_found_in_sentences;
 mod _2160_minimum_sum_of_four_digit_number_after_splitting_digits;
+mod _2206_divide_array_into_equal_pairs;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
 mod _2255_count_prefixes_of_a_given_string;
