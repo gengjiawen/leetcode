@@ -1,2 +1,10 @@
 [workspace]
-members = ["Array", "DP", "backtracking", "sliding_window", "String", "greedy"]
+members = [
+    "Array",
+    "DP",
+    "backtracking",
+    "sliding_window",
+    "String",
+    "greedy",
+    "priority_queue"
+]
