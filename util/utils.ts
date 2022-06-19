@@ -1,10 +1,8 @@
 export function underline(s: string) {
   return s
-    .split(' ')
+    .split('-')
     .map((a) => a.toLowerCase())
     .join('_')
-    .replaceAll('?', '')
-    .replaceAll('-', '_')
 }
 
 export function extract_rust_solution(str: string) {

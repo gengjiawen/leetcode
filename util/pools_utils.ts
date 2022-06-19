@@ -78,7 +78,10 @@ export async function generatePool({
   problems.forEach((i) => {
     const p = i.get()
     const { getCode, ext, comment, fileNameStyle } = config
-    const file_name = `pools/${fileNameStyle(p.title, p.frontend_id)}.${ext}`
+    const file_name = `pools/${fileNameStyle(
+      p.titleSlug,
+      p.frontend_id,
+    )}.${ext}`
     if (p.paidOy) {
       const fileContent = `${comment} ${p.url}\n`
 

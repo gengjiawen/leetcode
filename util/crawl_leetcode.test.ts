@@ -1,7 +1,9 @@
 import { saveRecord } from './crawl_leetcode'
 
-let execute_test = true
+let execute_test = false
 
 test('sync records', async () => {
-  await saveRecord()
+  if (execute_test) {
+    await saveRecord()
+  }
 })
