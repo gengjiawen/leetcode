@@ -46,5 +46,8 @@ pub fn k_closest(points: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
 
 #[test]
 pub fn t1() {
-    assert_eq!(k_closest(vec![vec![1,3], vec![-2,2]], 1), vec![vec![-2,2]]);
+    assert_eq!(
+        k_closest(vec![vec![1, 3], vec![-2, 2]], 1),
+        vec![vec![-2, 2]]
+    );
 }

@@ -37,17 +37,17 @@
 
 pub fn last_stone_weight(stones: Vec<i32>) -> i32 {
     let mut priority_queue = std::collections::BinaryHeap::from(stones);
-        while priority_queue.len() > 1 {
-            let x = priority_queue.pop().unwrap();
-            let y = priority_queue.pop().unwrap();
-            if x != y {
-                priority_queue.push(x - y);
-            }
+    while priority_queue.len() > 1 {
+        let x = priority_queue.pop().unwrap();
+        let y = priority_queue.pop().unwrap();
+        if x != y {
+            priority_queue.push(x - y);
         }
+    }
     return priority_queue.pop().unwrap_or(0);
 }
 
 #[test]
 pub fn t1() {
-    assert_eq!(last_stone_weight(vec![2,7,4,1,8,1]), 1);
+    assert_eq!(last_stone_weight(vec![2, 7, 4, 1, 8, 1]), 1);
 }
