@@ -14,11 +14,12 @@ export const sequelize = new Sequelize.Sequelize('leetcode', 'null', 'null', {
 
 export const Problem = sequelize.define('leetcode', {
   id: { type: Sequelize.INTEGER, primaryKey: true },
-  frontend_id: Sequelize.INTEGER,
+  frontend_id: { type: Sequelize.INTEGER, unique: true },
   url: Sequelize.STRING,
   content: Sequelize.STRING,
   codeDefinition: { type: Sequelize.STRING },
   title: { type: Sequelize.STRING },
+  titleSlug: { type: Sequelize.STRING },
   difficulty: { type: Sequelize.INTEGER },
   paidOnly: { type: Sequelize.BOOLEAN },
 })
@@ -72,6 +73,9 @@ export async function saveRecord() {
           return r
         }
         const raw = await getQuestionDetail(item.stat.question__title_slug)
+        if (!raw.data.data.question) {
+          return r
+        }
         const result = await Problem.upsert({
           id: item.stat.question_id,
           url: url,
@@ -79,6 +83,7 @@ export async function saveRecord() {
           content: raw.data.data.question.content,
           codeDefinition: raw.data.data.question.codeDefinition,
           title: item.stat.question__title,
+          titleSlug: item.stat.question__title_slug,
           difficulty: item.difficulty.level,
           paidOnly: item.paid_only,
         })

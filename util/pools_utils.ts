@@ -116,9 +116,6 @@ export async function generatePool({
       }, `${comment} `)
 
     let codeContent = config.patchCode ? config.patchCode(code) : code
-    const finalFile = {
-      codeContent,
-    }
     if (config.test) {
       const t = { code: codeContent }
       config.test(t)
