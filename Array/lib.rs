@@ -2,6 +2,9 @@
 
 mod _0036_valid_sudoku;
 mod _0347_top_k_frequent_elements;
+mod _0349_intersection_of_two_arrays;
+mod _0496_next_greater_element_i;
+mod _0500_keyboard_row;
 mod _0760_find_anagram_mappings;
 mod _0804_unique_morse_code_words;
 mod _0832_flipping_an_image;
