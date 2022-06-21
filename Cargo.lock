@@ -29,3 +29,7 @@ version = "0.1.0"
 [[package]]
 name = "leetcode_string"
 version = "0.1.0"
+
+[[package]]
+name = "leetcode_trie"
+version = "0.1.0"
