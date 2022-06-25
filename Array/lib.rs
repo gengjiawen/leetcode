@@ -1,16 +1,20 @@
 #![allow(dead_code)]
 
 mod _0036_valid_sudoku;
+mod _0303_range_sum_query_immutable;
 mod _0347_top_k_frequent_elements;
 mod _0349_intersection_of_two_arrays;
 mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
 mod _0575_distribute_candies;
+mod _0682_baseball_game;
 mod _0760_find_anagram_mappings;
 mod _0804_unique_morse_code_words;
+mod _0821_shortest_distance_to_a_character;
 mod _0832_flipping_an_image;
 mod _0883_projection_area_of_3d_shapes;
 mod _0905_sort_array_by_parity;
+mod _0908_smallest_range_i;
 mod _0922_sort_array_by_parity_ii;
 mod _1002_find_common_characters;
 mod _1030_matrix_cells_in_distance_order;
@@ -78,4 +82,3 @@ mod _2206_divide_array_into_equal_pairs;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
 mod _2255_count_prefixes_of_a_given_string;
-mod _0908_smallest_range_i;

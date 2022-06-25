@@ -1,11 +1,11 @@
 // https://leetcode.com/problems/shortest-distance-to-a-character
-// 
+//
 // Given a string `s` and a character `c` that occurs in `s`, return _an array of integers_ `answer` _where_ `answer.length == s.length` _and_ `answer[i]` _is the **distance** from index_ `i` _to the **closest** occurrence of character_ `c` _in_ `s`.
-// 
+//
 // The **distance** between two indices `i` and `j` is `abs(i - j)`, where `abs` is the absolute value function.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** s = "loveleetcode", c = "e"
 // **Output:** [3,2,1,0,1,0,0,1,2,2,1,0]
@@ -15,24 +15,50 @@
 // For index 4, there is a tie between the 'e' at index 3 and the 'e' at index 5, but the distance is still the same: abs(4 - 3) == abs(4 - 5) = 1.
 // The closest occurrence of 'e' for index 8 is at index 6, so the distance is abs(8 - 6) = 2.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** s = "aaab", c = "b"
 // **Output:** [3,2,1,0]
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= s.length <= 10<sup>4</sup>`
 // *   `s[i]` and `c` are lowercase English letters.
 // *   It is guaranteed that `c` occurs at least once in `s`.
 
 pub fn shortest_to_char(s: String, c: char) -> Vec<i32> {
-
+    let mut result: Vec<i32> = Vec::new();
+    let hit_set =
+        s.chars()
+            .enumerate()
+            .fold(std::collections::HashSet::new(), |mut set, (i, char)| {
+                if c == char {
+                    set.insert(i);
+                }
+                set
+            });
+    for (i, char) in s.chars().enumerate() {
+        if char == c {
+            result.push(0);
+        } else {
+            let mut min_distance = i32::MAX;
+            for &j in hit_set.iter() {
+                min_distance = std::cmp::min(min_distance, ((i as i32) - (j as i32)).abs());
+            }
+            result.push(min_distance);
+        }
     }
+    return result;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        shortest_to_char("loveleetcode".to_string(), 'e'),
+        vec![3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
+    );
+    assert_eq!(shortest_to_char("aaab".to_string(), 'b'), vec![3, 2, 1, 0]);
 }
