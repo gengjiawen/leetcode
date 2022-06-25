@@ -52,13 +52,16 @@ pub fn common_chars(words: Vec<String>) -> Vec<String> {
 
 #[test]
 pub fn t1() {
-    assert_eq!(
+    let mut r =
         common_chars(
             vec!["bella", "label", "roller"]
                 .iter()
                 .map(|&i| i.to_string())
                 .collect()
-        ),
+        );
+    r.sort();
+    assert_eq!(
+        r,
         vec!["e", "l", "l"]
     );
 }
