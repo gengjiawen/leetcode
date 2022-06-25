@@ -46,10 +46,44 @@
 // *   `1 <= searchWord.length <= 1000`
 // *   `searchWord` consists of lowercase English letters.
 
-pub fn suggested_products(products: Vec<String>, search_word: String) -> Vec<Vec<String>> {
+pub fn suggested_products(mut products: Vec<String>, search_word: String) -> Vec<Vec<String>> {
+    let mut ret = Vec::new();
 
- }
+    products.sort();
+    let mut current_str = String::new();
+    for char in search_word.chars() {
+        current_str.push(char);
+        let mut matched: Vec<String> = Vec::new();
+        for str in products.iter() {
+            if str.starts_with(&current_str) {
+                matched.push(str.clone());
+            }
+            if matched.len() == 3 {
+                break;
+            }
+        }
+        ret.push(matched);
+    }
+
+    return ret;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        suggested_products(
+            vec!["mobile", "mouse", "moneypot", "monitor", "mousepad"]
+                .iter()
+                .map(|&x| x.to_string())
+                .collect(),
+            "mouse".to_string()
+        ),
+        vec![
+            vec!["mobile", "moneypot", "monitor"],
+            vec!["mobile", "moneypot", "monitor"],
+            vec!["mouse", "mousepad"],
+            vec!["mouse", "mousepad"],
+            vec!["mouse", "mousepad"],
+        ]
+    );
 }
