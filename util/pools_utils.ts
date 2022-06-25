@@ -82,7 +82,7 @@ export async function generatePool({
       p.titleSlug,
       p.frontend_id,
     )}.${ext}`
-    if (p.paidOy) {
+    if (p.paidOnly) {
       const fileContent = `${comment} ${p.url}\n`
 
       fs.writeFile(file_name, fileContent, (err) => {
