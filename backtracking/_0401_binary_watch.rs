@@ -36,6 +36,20 @@
 
 use std::collections::HashSet;
 
+pub fn read_binary_watch_no_backtrack(turned_on: i32) -> Vec<String> {
+    let mut ret = Vec::<String>::new();
+    for h in 0..12i32 {
+        let bit_h = h.count_ones();
+        for m in 0..60i32 {
+            let bit_m = m.count_ones();
+            if bit_h + bit_m == turned_on as u32 {
+                ret.push(format!("{}:{:02}", h, m));
+            }
+        }
+    }
+    ret
+}
+
 pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
     let mut nums = vec![0; 10];
     fn backtrack(cur: &mut Vec<i32>, res: &mut Vec<Vec<i32>>, turned_on: i32) {
@@ -76,7 +90,8 @@ pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
 
 #[test]
 pub fn t1() {
-    let r: HashSet<String> = HashSet::from_iter(read_binary_watch(1).iter().cloned());
+    let s1: HashSet<String> = HashSet::from_iter(read_binary_watch_no_backtrack(1).iter().cloned());
+    let s2: HashSet<String> = HashSet::from_iter(read_binary_watch(1).iter().cloned());
     let result = HashSet::from_iter(
         [
             "0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00",
@@ -84,5 +99,6 @@ pub fn t1() {
         .iter()
         .map(|s| s.to_string()),
     );
-    assert_eq!(r, result);
+    assert_eq!(s1, result);
+    assert_eq!(s2, result);
 }
