@@ -11,3 +11,4 @@ mod _0077_combinations;
 mod _0078_subsets;
 mod _0090_subsets_ii;
 mod _0131_palindrome_partitioning;
+mod _0401_binary_watch;
