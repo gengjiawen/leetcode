@@ -1,11 +1,11 @@
 // https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits
-// 
+//
 // You are given an integer array `arr`. Sort the integers in the array in ascending order by the number of `1`'s in their binary representation and in case of two or more integers have the same number of `1`'s you have to sort them in ascending order.
-// 
+//
 // Return _the array after sorting it_.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** arr = [0,1,2,3,4,5,6,7,8]
 // **Output:** [0,1,2,4,8,3,5,6,7]
@@ -15,24 +15,30 @@
 // [7] has 3 bits.
 // The sorted array by bits is [0,1,2,4,8,3,5,6,7]
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** arr = [1024,512,256,128,64,32,16,8,4,2,1]
 // **Output:** [1,2,4,8,16,32,64,128,256,512,1024]
 // **Explantion:** All integers have 1 bit in the binary representation, you should just sort them in ascending order.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= arr.length <= 500`
 // *   `0 <= arr[i] <= 10<sup>4</sup>`
 
 pub fn sort_by_bits(arr: Vec<i32>) -> Vec<i32> {
-
-    }
+    let mut arr = arr;
+    arr.sort_unstable_by_key(|&x| (x.count_ones(), x));
+    return arr;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        sort_by_bits(vec![0, 1, 2, 3, 4, 5, 6, 7, 8]),
+        vec![0, 1, 2, 4, 8, 3, 5, 6, 7]
+    );
 }
