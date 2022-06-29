@@ -93,3 +93,4 @@ mod _2206_divide_array_into_equal_pairs;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
 mod _2255_count_prefixes_of_a_given_string;
+mod _2319_check_if_matrix_is_x_matrix;
