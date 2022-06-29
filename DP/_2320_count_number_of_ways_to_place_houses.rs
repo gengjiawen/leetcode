@@ -40,7 +40,7 @@ pub fn count_house_placements(n: i32) -> i32 {
     for i in 2..=n {
         dp[i as usize] = (dp[i as usize - 1] + dp[i as usize - 2]) % mode;
     }
-    return (dp[n as usize] * dp [n as usize] % mode) as i32;
+    return (dp[n as usize] * dp[n as usize] % mode) as i32;
 }
 
 #[test]
