@@ -51,10 +51,7 @@ pub fn maximums_spliced_array(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
         let mut prev_max = 0;
         let mut max = 0;
         for (x, y) in num1.iter().zip(nums2.iter()) {
-            prev_max = y - x + prev_max;
-            if prev_max < 0 {
-                prev_max = 0;
-            }
+            prev_max = (y - x).max(y - x + prev_max);
             max = max.max(prev_max);
         }
         return num1.iter().sum::<i32>() + max;
