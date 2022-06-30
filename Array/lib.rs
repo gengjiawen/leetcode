@@ -12,6 +12,7 @@ mod _0682_baseball_game;
 mod _0760_find_anagram_mappings;
 mod _0766_toeplitz_matrix;
 mod _0804_unique_morse_code_words;
+mod _0806_number_of_lines_to_write_string;
 mod _0821_shortest_distance_to_a_character;
 mod _0832_flipping_an_image;
 mod _0883_projection_area_of_3d_shapes;
