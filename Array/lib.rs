@@ -2,6 +2,7 @@
 
 mod _0036_valid_sudoku;
 mod _0303_range_sum_query_immutable;
+mod _0346_moving_average_from_data_stream;
 mod _0347_top_k_frequent_elements;
 mod _0349_intersection_of_two_arrays;
 mod _0463_island_perimeter;
@@ -15,6 +16,7 @@ mod _0804_unique_morse_code_words;
 mod _0806_number_of_lines_to_write_string;
 mod _0821_shortest_distance_to_a_character;
 mod _0832_flipping_an_image;
+mod _0852_peak_index_in_a_mountain_array;
 mod _0883_projection_area_of_3d_shapes;
 mod _0905_sort_array_by_parity;
 mod _0908_smallest_range_i;
