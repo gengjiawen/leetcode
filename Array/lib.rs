@@ -35,6 +35,7 @@ mod _1108_defanging_an_ip_address;
 mod _1122_relative_sort_array;
 mod _1133_largest_unique_number;
 mod _1150_check_if_a_number_is_majority_element_in_a_sorted_array;
+mod _1160_find_words_that_can_be_formed_by_characters;
 mod _1165_single_row_keyboard;
 mod _1196_how_many_apples_can_you_put_into_the_basket;
 mod _1200_minimum_absolute_difference;
