@@ -1,21 +1,21 @@
 // https://leetcode.com/problems/delete-columns-to-make-sorted
-// 
+//
 // You are given an array of `n` strings `strs`, all of the same length.
-// 
+//
 // The strings can be arranged such that there is one on each line, making a grid. For example, `strs = ["abc", "bce", "cae"]` can be arranged as:
-// 
+//
 // ```
 // abc
 // bce
 // cae
 // ```
-// 
+//
 // You want to **delete** the columns that are **not sorted lexicographically**. In the above example (0-indexed), columns 0 (`'a'`, `'b'`, `'c'`) and 2 (`'c'`, `'e'`, `'e'`) are sorted while column 1 (`'b'`, `'c'`, `'a'`) is not, so you would delete column 1.
-// 
+//
 // Return _the number of columns that you will delete_.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** strs = ["cba","daf","ghi"]
 // **Output:** 1
@@ -25,9 +25,9 @@
 //   ghi
 // Columns 0 and 2 are sorted, but column 1 is not, so you only need to delete 1 column.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** strs = ["a","b"]
 // **Output:** 0
@@ -36,9 +36,9 @@
 //   b
 // Column 0 is the only column and is sorted, so you will not delete any columns.
 // ```
-// 
+//
 // **Example 3:**
-// 
+//
 // ```
 // **Input:** strs = ["zyx","wvu","tsr"]
 // **Output:** 3
@@ -48,18 +48,44 @@
 //   tsr
 // All 3 columns are not sorted, so you will delete all 3.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `n == strs.length`
 // *   `1 <= n <= 100`
 // *   `1 <= strs[i].length <= 1000`
 // *   `strs[i]` consists of lowercase English letters.
 
 pub fn min_deletion_size(strs: Vec<String>) -> i32 {
-
+    let strs = strs
+        .iter()
+        .map(|s| s.chars().collect::<Vec<char>>())
+        .collect::<Vec<Vec<char>>>();
+    let mut count = 0;
+    for i in 0..strs[0].len() {
+        let mut sorted = true;
+        for j in 1..strs.len() {
+            if strs[j][i] < strs[j - 1][i] {
+                sorted = false;
+                break;
+            }
+        }
+        if !sorted {
+            count += 1;
+        }
     }
+    return count;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        min_deletion_size(vec![
+            "cba".to_string(),
+            "daf".to_string(),
+            "ghi".to_string()
+        ]),
+        1
+    );
+    assert_eq!(min_deletion_size(vec!["a".to_string(), "b".to_string()]), 0);
 }
