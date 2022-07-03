@@ -25,6 +25,7 @@ mod _0929_unique_email_addresses;
 mod _0944_delete_columns_to_make_sorted;
 mod _0961_n_repeated_element_in_size_2n_array;
 mod _0977_squares_of_a_sorted_array;
+mod _0999_available_captures_for_rook;
 mod _1002_find_common_characters;
 mod _1030_matrix_cells_in_distance_order;
 mod _1051_height_checker;
