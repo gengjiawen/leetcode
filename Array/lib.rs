@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 mod _0036_valid_sudoku;
+mod _0268_missing_number;
 mod _0303_range_sum_query_immutable;
 mod _0346_moving_average_from_data_stream;
 mod _0347_top_k_frequent_elements;
@@ -8,6 +9,7 @@ mod _0349_intersection_of_two_arrays;
 mod _0463_island_perimeter;
 mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
+mod _0566_reshape_the_matrix;
 mod _0575_distribute_candies;
 mod _0682_baseball_game;
 mod _0760_find_anagram_mappings;
@@ -54,6 +56,7 @@ mod _1356_sort_integers_by_the_number_of_1_bits;
 mod _1365_how_many_numbers_are_smaller_than_the_current_number;
 mod _1380_lucky_numbers_in_a_matrix;
 mod _1389_create_target_array_in_the_given_order;
+mod _1394_find_lucky_integer_in_an_array;
 mod _1426_counting_elements;
 mod _1431_kids_with_the_greatest_number_of_candies;
 mod _1450_number_of_students_doing_homework_at_a_given_time;
