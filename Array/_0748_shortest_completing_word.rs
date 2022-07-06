@@ -1,15 +1,15 @@
 // https://leetcode.com/problems/shortest-completing-word
-// 
+//
 // Given a string `licensePlate` and an array of strings `words`, find the **shortest completing** word in `words`.
-// 
+//
 // A **completing** word is a word that **contains all the letters** in `licensePlate`. **Ignore numbers and spaces** in `licensePlate`, and treat letters as **case insensitive**. If a letter appears more than once in `licensePlate`, then it must appear in the word the same number of times or more.
-// 
+//
 // For example, if `licensePlate` `= "aBc 12c"`, then it contains letters `'a'`, `'b'` (ignoring case), and `'c'` twice. Possible **completing** words are `"abccdef"`, `"caaacab"`, and `"cbca"`.
-// 
+//
 // Return _the shortest **completing** word in_ `words`_._ It is guaranteed an answer exists. If there are multiple shortest **completing** words, return the **first** one that occurs in `words`.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** licensePlate = "1s3 PSt", words = ["step","steps","stripe","stepple"]
 // **Output:** "steps"
@@ -20,17 +20,17 @@
 // "stepple" is missing an 's'.
 // Since "steps" is the only word containing all the letters, that is the answer.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** licensePlate = "1s3 456", words = ["looks","pest","stew","show"]
 // **Output:** "pest"
 // **Explanation:** licensePlate only contains the letter 's'. All the words contain 's', but among these "pest", "stew", and "show" are shortest. The answer is "pest" because it is the word that appears earliest of the 3.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= licensePlate.length <= 7`
 // *   `licensePlate` contains digits, letters (uppercase or lowercase), or space `' '`.
 // *   `1 <= words.length <= 1000`
@@ -38,9 +38,45 @@
 // *   `words[i]` consists of lower case English letters.
 
 pub fn shortest_completing_word(license_plate: String, words: Vec<String>) -> String {
-
+    let word_license = license_plate.chars().filter(|&c| c.is_alphabetic()).fold(
+        std::collections::HashMap::new(),
+        |mut acc, c| {
+            *acc.entry(c.to_ascii_lowercase()).or_insert(0) += 1;
+            acc
+        },
+    );
+    let mut min_len = std::usize::MAX;
+    let mut min_word = String::new();
+    for word in words {
+        let word_map = word
+            .chars()
+            .fold(std::collections::HashMap::new(), |mut acc, c| {
+                *acc.entry(c.to_ascii_lowercase()).or_insert(0) += 1;
+                acc
+            });
+        let ok = word_license
+            .iter()
+            .all(|(k, v)| word_map.get(k).unwrap_or(&0) >= v);
+        if ok && word.len() < min_len {
+            min_len = word.len();
+            min_word = word;
+        }
     }
+    return min_word;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        shortest_completing_word(
+            "1s3 PSt".to_string(),
+            vec![
+                "step".to_string(),
+                "steps".to_string(),
+                "stripe".to_string(),
+                "stepple".to_string()
+            ]
+        ),
+        "steps"
+    );
 }

@@ -34,8 +34,6 @@
 //
 // *   `0 <= turnedOn <= 10`
 
-use std::collections::HashSet;
-
 pub fn read_binary_watch_no_backtrack(turned_on: i32) -> Vec<String> {
     let mut ret = Vec::<String>::new();
     for h in 0..12i32 {
@@ -90,6 +88,7 @@ pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
 
 #[test]
 pub fn t1() {
+    use std::collections::HashSet;
     let s1: HashSet<String> = HashSet::from_iter(read_binary_watch_no_backtrack(1).iter().cloned());
     let s2: HashSet<String> = HashSet::from_iter(read_binary_watch(1).iter().cloned());
     let result = HashSet::from_iter(
