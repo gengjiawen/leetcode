@@ -1,13 +1,13 @@
 // https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum
-// 
+//
 // Given an array of integers `nums`, you start with an initial **positive** value _startValue__._
-// 
+//
 // In each iteration, you calculate the step by step sum of _startValue_ plus elements in `nums` (from left to right).
-// 
+//
 // Return the minimum **positive** value of _startValue_ such that the step by step sum is never less than 1.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** nums = [-3,2,-3,4,2]
 // **Output:** 5
@@ -20,31 +20,38 @@
 //   (0 **+4** ) = 4  | (1 **+4** ) = 5    |   4
 //   (4 **+2** ) = 6  | (5 **+2** ) = 7    |   2
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** nums = [1,2]
 // **Output:** 1
-// **Explanation:** Minimum start value should be positive. 
+// **Explanation:** Minimum start value should be positive.
 // ```
-// 
+//
 // **Example 3:**
-// 
+//
 // ```
 // **Input:** nums = [1,-2,-3]
 // **Output:** 5
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= nums.length <= 100`
 // *   `-100 <= nums[i] <= 100`
 
 pub fn min_start_value(nums: Vec<i32>) -> i32 {
-
+    let mut min_value = 0;
+    let mut cur = 0;
+    for num in nums {
+        cur += num;
+        min_value = min_value.min(cur);
     }
+    return std::cmp::max(-min_value + 1, 1);
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(min_start_value(vec![-3, 2, -3, 4, 2]), 5);
 }
