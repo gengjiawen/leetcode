@@ -81,6 +81,7 @@ mod _1656_design_an_ordered_stream;
 mod _1662_check_if_two_string_arrays_are_equivalent;
 mod _1672_richest_customer_wealth;
 mod _1684_count_the_number_of_consistent_strings;
+mod _1700_number_of_students_unable_to_eat_lunch;
 mod _1708_largest_subarray_length_k;
 mod _1720_decode_xored_array;
 mod _1725_number_of_rectangles_that_can_form_the_largest_square;
