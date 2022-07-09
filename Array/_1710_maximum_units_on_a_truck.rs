@@ -37,15 +37,15 @@
 
 pub fn maximum_units(box_types: Vec<Vec<i32>>, truck_size: i32) -> i32 {
     let mut sorted_box = box_types.clone();
-    sorted_box.sort_unstable_by_key(|x| x[1]);
+    sorted_box.sort_unstable_by_key(|x| -x[1]);
     let boxes = sorted_box
         .iter()
-        .map(|x| vec![x[0]; x[1] as usize])
+        .map(|x| vec![x[1]; x[0] as usize])
         .flatten()
         .take(truck_size as usize)
         .collect::<Vec<i32>>();
 
-    return boxes.into_iter().sum();
+    return boxes.iter().sum();
 }
 
 #[test]
@@ -55,7 +55,7 @@ pub fn t1() {
         8
     );
     assert_eq!(
-        maximum_units(vec![vec![5, 10], vec![2, 5], vec![4, 7], vec![3, 9]], 4),
-        8
+        maximum_units(vec![vec![5, 10], vec![2, 5], vec![4, 7], vec![3, 9]], 10),
+        91
     );
 }
