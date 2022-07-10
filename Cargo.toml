@@ -7,5 +7,6 @@ members = [
     "String",
     "greedy",
     "trie",
+    "stack",
     "priority_queue"
 ]

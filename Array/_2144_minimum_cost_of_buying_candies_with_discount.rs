@@ -1,15 +1,15 @@
 // https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount
-// 
+//
 // A shop is selling candies at a discount. For **every two** candies sold, the shop gives a **third** candy for **free**.
-// 
+//
 // The customer can choose **any** candy to take away for free as long as the cost of the chosen candy is less than or equal to the **minimum** cost of the two candies bought.
-// 
+//
 // *   For example, if there are `4` candies with costs `1`, `2`, `3`, and `4`, and the customer buys candies with costs `2` and `3`, they can take the candy with cost `1` for free, but not the candy with cost `4`.
-// 
+//
 // Given a **0-indexed** integer array `cost`, where `cost[i]` denotes the cost of the `i<sup>th</sup>` candy, return _the **minimum cost** of buying **all** the candies_.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** cost = [1,2,3]
 // **Output:** 5
@@ -18,9 +18,9 @@
 // Note that we cannot buy candies with costs 1 and 3, and then take the candy with cost 2 for free.
 // The cost of the free candy has to be less than or equal to the minimum cost of the purchased candies.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** cost = [6,5,7,9,2,2]
 // **Output:** 23
@@ -31,25 +31,43 @@
 // - Take the last remaining candy with cost 2 for free
 // Hence, the minimum cost to buy all candies is 9 + 7 + 5 + 2 = 23.
 // ```
-// 
+//
 // **Example 3:**
-// 
+//
 // ```
 // **Input:** cost = [5,5]
 // **Output:** 10
 // **Explanation:** Since there are only 2 candies, we buy both of them. There is not a third candy we can take for free.
 // Hence, the minimum cost to buy all candies is 5 + 5 = 10.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= cost.length <= 100`
 // *   `1 <= cost[i] <= 100`
 
 pub fn minimum_cost(cost: Vec<i32>) -> i32 {
-
+    let mut sorted_cost = cost.clone();
+    sorted_cost.sort_unstable();
+    let mut sum = 0;
+    while sorted_cost.len() > 0 {
+        for i in 0..3 {
+            match sorted_cost.pop() {
+                Some(val) => {
+                    if i < 2 {
+                        sum += val;
+                    }
+                }
+                None => break,
+            }
+        }
     }
+    return sum;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(minimum_cost(vec![1, 2, 3]), 5);
+    assert_eq!(minimum_cost(vec![6, 5, 7, 9, 2, 2]), 23);
+    assert_eq!(minimum_cost(vec![5, 5]), 10);
 }
