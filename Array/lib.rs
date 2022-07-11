@@ -6,6 +6,7 @@ mod _0303_range_sum_query_immutable;
 mod _0346_moving_average_from_data_stream;
 mod _0347_top_k_frequent_elements;
 mod _0349_intersection_of_two_arrays;
+mod _0448_find_all_numbers_disappeared_in_an_array;
 mod _0463_island_perimeter;
 mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
