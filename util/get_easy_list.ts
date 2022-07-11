@@ -75,8 +75,12 @@ export async function genList() {
   const problem_list: any[] = fs
     .readJSONSync(quickFileName)
     .data.problemsetQuestionList.questions.filter(
-      (item: { frontendQuestionId: string }) =>
-        !item.frontendQuestionId.startsWith('LCP'),
+      (item: { frontendQuestionId: string }) => {
+        return (
+          !item.frontendQuestionId.startsWith('LCP') &&
+          !item.frontendQuestionId.startsWith('LCS')
+        )
+      },
     )
     .map((item: { frontendQuestionId: string }) =>
       parseInt(item.frontendQuestionId),
