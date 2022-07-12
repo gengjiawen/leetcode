@@ -1,13 +1,13 @@
 // https://leetcode.com/problems/min-cost-climbing-stairs
-// 
+//
 // You are given an integer array `cost` where `cost[i]` is the cost of `i<sup>th</sup>` step on a staircase. Once you pay the cost, you can either climb one or two steps.
-// 
+//
 // You can either start from the step with index `0`, or the step with index `1`.
-// 
+//
 // Return _the minimum cost to reach the top of the floor_.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** cost = [10,<u>15</u>,20]
 // **Output:** 15
@@ -15,9 +15,9 @@
 // - Pay 15 and climb two steps to reach the top.
 // The total cost is 15.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** cost = [<u>1</u>,100,<u>1</u>,1,<u>1</u>,100,<u>1</u>,<u>1</u>,100,<u>1</u>]
 // **Output:** 6
@@ -30,16 +30,23 @@
 // - Pay 1 and climb one step to reach the top.
 // The total cost is 6.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `2 <= cost.length <= 1000`
 // *   `0 <= cost[i] <= 999`
 
 pub fn min_cost_climbing_stairs(cost: Vec<i32>) -> i32 {
-
+    let mut dp = vec![0; cost.len()];
+    dp[0] = cost[0];
+    dp[1] = cost[1];
+    for i in 2..cost.len() {
+        dp[i] = cost[i] + std::cmp::min(dp[i - 1], dp[i - 2]);
     }
+    return std::cmp::min(dp[cost.len() - 1], dp[cost.len() - 2]);
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(min_cost_climbing_stairs(vec![10, 15, 20]), 15);
 }
