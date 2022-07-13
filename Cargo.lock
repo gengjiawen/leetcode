@@ -11,6 +11,10 @@ name = "leetcode_backtracking"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode_compiler"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode_dp"
 version = "0.1.0"
 
