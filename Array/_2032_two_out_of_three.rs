@@ -54,8 +54,11 @@ pub fn two_out_of_three(nums1: Vec<i32>, nums2: Vec<i32>, nums3: Vec<i32>) -> Ve
 
 #[test]
 pub fn t1() {
+    use std::collections::HashSet;
     assert_eq!(
-        two_out_of_three(vec![1, 1, 3, 2], vec![2, 3], vec![3]),
-        vec![3, 2]
+        two_out_of_three(vec![1, 1, 3, 2], vec![2, 3], vec![3])
+            .into_iter()
+            .collect::<HashSet<i32>>(),
+        vec![3, 2].into_iter().collect::<HashSet<i32>>()
     );
 }

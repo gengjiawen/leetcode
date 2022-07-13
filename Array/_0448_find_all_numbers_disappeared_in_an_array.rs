@@ -36,9 +36,5 @@ pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
 
 #[test]
 pub fn t1() {
-    assert_eq!(
-        find_disappeared_numbers(vec![4, 3, 2, 7, 8, 2, 3, 1]),
-        vec![5, 6]
-    );
     assert_eq!(find_disappeared_numbers(vec![1, 1]), vec![2]);
 }
