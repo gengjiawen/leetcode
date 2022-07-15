@@ -81,6 +81,7 @@ mod _1582_special_positions_in_a_binary_matrix;
 mod _1588_sum_of_all_odd_length_subarrays;
 mod _1619_mean_of_array_after_removing_some_elements;
 mod _1636_sort_array_by_increasing_frequency;
+mod _1652_defuse_the_bomb;
 mod _1656_design_an_ordered_stream;
 mod _1662_check_if_two_string_arrays_are_equivalent;
 mod _1672_richest_customer_wealth;
