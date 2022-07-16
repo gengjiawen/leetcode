@@ -23,6 +23,7 @@ mod _0832_flipping_an_image;
 mod _0852_peak_index_in_a_mountain_array;
 mod _0867_transpose_matrix;
 mod _0883_projection_area_of_3d_shapes;
+mod _0888_fair_candy_swap;
 mod _0905_sort_array_by_parity;
 mod _0908_smallest_range_i;
 mod _0922_sort_array_by_parity_ii;
