@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/perform-string-shifts
 
-use std::arch::aarch64::{vqmovunh_s16, vqmovuns_s32};
-
 pub fn string_shift(s: String, shift: Vec<Vec<i32>>) -> String {
     let mut move_steps = shift.iter().fold(0, |mut acc, x| {
         if x[0] == 0 {
