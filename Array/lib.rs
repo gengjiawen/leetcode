@@ -63,6 +63,7 @@ mod _1389_create_target_array_in_the_given_order;
 mod _1394_find_lucky_integer_in_an_array;
 mod _1413_minimum_value_to_get_positive_step_by_step_sum;
 mod _1426_counting_elements;
+mod _1427_perform_string_shifts;
 mod _1431_kids_with_the_greatest_number_of_candies;
 mod _1441_build_an_array_with_stack_operations;
 mod _1450_number_of_students_doing_homework_at_a_given_time;
