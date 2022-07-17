@@ -12,6 +12,7 @@ mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
 mod _0566_reshape_the_matrix;
 mod _0575_distribute_candies;
+mod _0661_image_smoother;
 mod _0682_baseball_game;
 mod _0748_shortest_completing_word;
 mod _0760_find_anagram_mappings;
