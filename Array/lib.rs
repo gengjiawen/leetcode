@@ -135,3 +135,4 @@ mod _2248_intersection_of_multiple_arrays;
 mod _2255_count_prefixes_of_a_given_string;
 mod _2293_min_max_game;
 mod _2319_check_if_matrix_is_x_matrix;
+mod _1491_average_salary_excluding_the_minimum_and_maximum_salary;
