@@ -47,7 +47,7 @@ pub fn image_smoother(img: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
             let mut count = 0;
             for x in i - 1..=i + 1 {
                 for y in j - 1..=j + 1 {
-                    if x >= 0 && x < m as i32 && y >= 0 && y < n as i32{
+                    if x >= 0 && x < m as i32 && y >= 0 && y < n as i32 {
                         sum += img[x as usize][y as usize];
                         count += 1;
                     }

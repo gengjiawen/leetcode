@@ -41,7 +41,7 @@ pub fn average(salary: Vec<i32>) -> f64 {
         }
         sum += i;
     }
-    return (sum - min - max) as f64 / (salary.len() - 2) as f64
+    return (sum - min - max) as f64 / (salary.len() - 2) as f64;
 }
 
 #[test]
