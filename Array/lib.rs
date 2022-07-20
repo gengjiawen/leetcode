@@ -98,6 +98,7 @@ mod _1720_decode_xored_array;
 mod _1725_number_of_rectangles_that_can_form_the_largest_square;
 mod _1732_find_the_highest_altitude;
 mod _1748_sum_of_unique_elements;
+mod _1752_check_if_array_is_sorted_and_rotated;
 mod _1773_count_items_matching_a_rule;
 mod _1800_maximum_ascending_subarray_sum;
 mod _1816_truncate_sentence;
