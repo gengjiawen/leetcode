@@ -37,7 +37,7 @@ export function getEasyList() {
     variables: {
       categorySlug: 'algorithms',
       skip: 0,
-      limit: 30,
+      limit: 50,
       filters: {
         orderBy: 'AC_RATE',
         sortOrder: 'DESCENDING',
