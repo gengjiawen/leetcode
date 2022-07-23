@@ -10,6 +10,7 @@ mod _0349_intersection_of_two_arrays;
 mod _0350_intersection_of_two_arrays_ii;
 mod _0448_find_all_numbers_disappeared_in_an_array;
 mod _0463_island_perimeter;
+mod _0485_max_consecutive_ones;
 mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
 mod _0566_reshape_the_matrix;
