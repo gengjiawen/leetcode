@@ -43,6 +43,7 @@ mod _1030_matrix_cells_in_distance_order;
 mod _1051_height_checker;
 mod _1063_number_of_valid_subarrays;
 mod _1085_sum_of_digits_in_the_minimum_number;
+mod _1089_duplicate_zeros;
 mod _1108_defanging_an_ip_address;
 mod _1122_relative_sort_array;
 mod _1133_largest_unique_number;

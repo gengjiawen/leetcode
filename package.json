@@ -6,7 +6,7 @@
   "scripts": {
     "gen": "ts-node util/generate_pools.ts",
     "prepare": "husky install",
-    "format": "prettier --write \"./**/*.{js,ts}\" \"**/*.yml\"",
+    "format": "prettier --write \"./**/*.{js,ts}\" \"**/*.yml\" \"**/*.toml\"",
     "format:check": "prettier --list-different \"./**/*.{js,ts}\" \"**/*.yml\"",
     "clean": "rimraf build",
     "ts-build": "npm run clean && tsc -p ./tsconfig.json",

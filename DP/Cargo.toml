@@ -7,5 +7,6 @@ edition = "2021"
 [lib]
 name = "leetcode_array"
 path = "lib.rs"
+doctest = false
 
 [dependencies]
