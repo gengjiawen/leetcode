@@ -17,6 +17,7 @@ mod _0566_reshape_the_matrix;
 mod _0575_distribute_candies;
 mod _0661_image_smoother;
 mod _0682_baseball_game;
+mod _0697_degree_of_an_array;
 mod _0748_shortest_completing_word;
 mod _0760_find_anagram_mappings;
 mod _0766_toeplitz_matrix;
