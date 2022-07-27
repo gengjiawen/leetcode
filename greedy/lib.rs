@@ -6,3 +6,4 @@ mod _0942_di_string_match;
 mod _1217_minimum_cost_to_move_chips_to_the_same_position;
 mod _1403_minimum_subsequence_in_non_increasing_order;
 mod _1995_count_special_quadruplets;
+mod _2094_finding_3_digit_even_numbers;
