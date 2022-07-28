@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+extern crate core;
+
 mod _0036_valid_sudoku;
 mod _0228_summary_ranges;
 mod _0268_missing_number;
@@ -58,6 +60,7 @@ mod _1213_intersection_of_three_sorted_arrays;
 mod _1252_cells_with_odd_values_in_a_matrix;
 mod _1266_minimum_time_visiting_all_points;
 mod _1268_search_suggestions_system;
+mod _1287_element_appearing_more_than_25_in_sorted_array;
 mod _1295_find_numbers_with_even_number_of_digits;
 mod _1299_replace_elements_with_greatest_element_on_right_side;
 mod _1304_find_n_unique_integers_sum_up_to_zero;
