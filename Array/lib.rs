@@ -148,3 +148,4 @@ mod _2248_intersection_of_multiple_arrays;
 mod _2255_count_prefixes_of_a_given_string;
 mod _2293_min_max_game;
 mod _2319_check_if_matrix_is_x_matrix;
+mod _2073_time_needed_to_buy_tickets;
