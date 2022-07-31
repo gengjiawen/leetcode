@@ -53,5 +53,8 @@ pub fn check_valid(matrix: Vec<Vec<i32>>) -> bool {
 
 #[test]
 pub fn t1() {
-    assert_eq!(check_valid(vec![vec![1,2,3],vec![3,1,2],vec![2,3,1]]), true);
+    assert_eq!(
+        check_valid(vec![vec![1, 2, 3], vec![3, 1, 2], vec![2, 3, 1]]),
+        true
+    );
 }

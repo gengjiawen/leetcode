@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 mod _0243_shortest_word_distance;
+mod _0455_assign_cookies;
 mod _0812_largest_triangle_area;
 mod _0942_di_string_match;
 mod _1217_minimum_cost_to_move_chips_to_the_same_position;
