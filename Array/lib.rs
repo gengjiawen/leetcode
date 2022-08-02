@@ -29,6 +29,7 @@ mod _0806_number_of_lines_to_write_string;
 mod _0821_shortest_distance_to_a_character;
 mod _0832_flipping_an_image;
 mod _0852_peak_index_in_a_mountain_array;
+mod _0860_lemonade_change;
 mod _0867_transpose_matrix;
 mod _0883_projection_area_of_3d_shapes;
 mod _0888_fair_candy_swap;
