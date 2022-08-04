@@ -18,6 +18,7 @@ mod _0496_next_greater_element_i;
 mod _0500_keyboard_row;
 mod _0566_reshape_the_matrix;
 mod _0575_distribute_candies;
+mod _0594_longest_harmonious_subsequence;
 mod _0599_minimum_index_sum_of_two_lists;
 mod _0661_image_smoother;
 mod _0682_baseball_game;
