@@ -81,6 +81,7 @@ mod _1413_minimum_value_to_get_positive_step_by_step_sum;
 mod _1426_counting_elements;
 mod _1427_perform_string_shifts;
 mod _1431_kids_with_the_greatest_number_of_candies;
+mod _1437_check_if_all_1s_are_at_least_length_k_places_away;
 mod _1441_build_an_array_with_stack_operations;
 mod _1450_number_of_students_doing_homework_at_a_given_time;
 mod _1460_make_two_arrays_equal_by_reversing_sub_arrays;
