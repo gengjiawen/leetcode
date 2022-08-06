@@ -155,3 +155,4 @@ mod _2248_intersection_of_multiple_arrays;
 mod _2255_count_prefixes_of_a_given_string;
 mod _2293_min_max_game;
 mod _2319_check_if_matrix_is_x_matrix;
+mod _2335_minimum_amount_of_time_to_fill_cups;

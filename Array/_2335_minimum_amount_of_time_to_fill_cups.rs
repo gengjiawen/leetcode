@@ -1,11 +1,11 @@
 // https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups
-// 
+//
 // You have a water dispenser that can dispense cold, warm, and hot water. Every second, you can either fill up `2` cups with **different** types of water, or `1` cup of any type of water.
-// 
+//
 // You are given a **0-indexed** integer array `amount` of length `3` where `amount[0]`, `amount[1]`, and `amount[2]` denote the number of cold, warm, and hot water cups you need to fill respectively. Return _the **minimum** number of seconds needed to fill up all the cups_.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** amount = [1,4,2]
 // **Output:** 4
@@ -16,9 +16,9 @@
 // Second 4: Fill up a warm cup.
 // It can be proven that 4 is the minimum number of seconds needed.
 // ```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** amount = [5,4,4]
 // **Output:** 7
@@ -31,24 +31,36 @@
 // Second 6: Fill up a cold cup, and a warm cup.
 // Second 7: Fill up a hot cup.
 // ```
-// 
+//
 // **Example 3:**
-// 
+//
 // ```
 // **Input:** amount = [5,0,0]
 // **Output:** 5
 // **Explanation:** Every second, we fill up a cold cup.
 // ```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `amount.length == 3`
 // *   `0 <= amount[i] <= 100`
 
 pub fn fill_cups(amount: Vec<i32>) -> i32 {
-
+    let mut res = 0;
+    let mut amount_clone = amount.clone();
+    loop {
+        if amount_clone.iter().max().unwrap() < &1 {
+            return res;
+        }
+        amount_clone.sort_unstable();
+        amount_clone[2] -= 1;
+        amount_clone[1] -= 1;
+        res += 1;
     }
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(fill_cups(vec![1, 4, 2]), 4);
+    assert_eq!(fill_cups(vec![5, 4, 4]), 7);
 }
