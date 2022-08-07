@@ -42,6 +42,7 @@ mod _0908_smallest_range_i;
 mod _0922_sort_array_by_parity_ii;
 mod _0929_unique_email_addresses;
 mod _0944_delete_columns_to_make_sorted;
+mod _0953_verifying_an_alien_dictionary;
 mod _0961_n_repeated_element_in_size_2n_array;
 mod _0977_squares_of_a_sorted_array;
 mod _0999_available_captures_for_rook;
