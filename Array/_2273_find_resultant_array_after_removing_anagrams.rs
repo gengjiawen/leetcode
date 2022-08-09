@@ -1,15 +1,15 @@
 // https://leetcode.com/problems/find-resultant-array-after-removing-anagrams
-// 
+//
 // You are given a **0-indexed** string array `words`, where `words[i]` consists of lowercase English letters.
-// 
+//
 // In one operation, select any index `i` such that `0 < i < words.length` and `words[i - 1]` and `words[i]` are **anagrams**, and **delete** `words[i]` from `words`. Keep performing this operation as long as you can select an index that satisfies the conditions.
-// 
+//
 // Return `words` _after performing all operations_. It can be shown that selecting the indices for each operation in **any** arbitrary order will lead to the same result.
-// 
+//
 // An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase using all the original letters exactly once. For example, `"dacb"` is an anagram of `"abdc"`.
-// 
+//
 // **Example 1:**
-// 
+//
 // ```
 // **Input:** words = ["abba","baba","bbaa","cd","cd"]
 // **Output:** ["abba","cd"]
@@ -22,25 +22,68 @@
 // - Since words[2] = "cd" and words[1] = "cd" are anagrams, we choose index 2 and delete words[2].
 //   Now words = ["abba","cd"].
 // We can no longer perform any operations, so ["abba","cd"] is the final answer.```
-// 
+//
 // **Example 2:**
-// 
+//
 // ```
 // **Input:** words = ["a","b","c","d","e"]
 // **Output:** ["a","b","c","d","e"]
 // **Explanation:**
 // No two adjacent strings in words are anagrams of each other, so no operations are performed.```
-// 
+//
 // **Constraints:**
-// 
+//
 // *   `1 <= words.length <= 100`
 // *   `1 <= words[i].length <= 10`
 // *   `words[i]` consists of lowercase English letters.
 
 pub fn remove_anagrams(words: Vec<String>) -> Vec<String> {
-
+    let mut result = Vec::new();
+    let mut map = std::collections::HashMap::new();
+    let mut prev_string = String::new();
+    for word in words {
+        let mut chars: Vec<char> = word.chars().collect();
+        chars.sort();
+        let key = chars.iter().collect::<String>();
+        if !map.contains_key(&key) {
+            map.insert(key.clone(), 1);
+            result.push(word);
+        } else {
+            if prev_string != key {
+                result.push(word);
+            }
+        }
+        prev_string = key.clone();
     }
+    return result;
+}
 
 #[test]
 pub fn t1() {
+    assert_eq!(
+        remove_anagrams(vec![
+            "abba".to_string(),
+            "baba".to_string(),
+            "bbaa".to_string(),
+            "cd".to_string(),
+            "cd".to_string()
+        ]),
+        vec!["abba".to_string(), "cd".to_string()]
+    );
+    assert_eq!(
+        remove_anagrams(vec![
+            "a".to_string(),
+            "b".to_string(),
+            "c".to_string(),
+            "d".to_string(),
+            "e".to_string()
+        ]),
+        vec![
+            "a".to_string(),
+            "b".to_string(),
+            "c".to_string(),
+            "d".to_string(),
+            "e".to_string()
+        ]
+    );
 }

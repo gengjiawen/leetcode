@@ -155,6 +155,7 @@ mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
 mod _2248_intersection_of_multiple_arrays;
 mod _2255_count_prefixes_of_a_given_string;
+mod _2273_find_resultant_array_after_removing_anagrams;
 mod _2293_min_max_game;
 mod _2319_check_if_matrix_is_x_matrix;
 mod _2335_minimum_amount_of_time_to_fill_cups;
