@@ -30,12 +30,8 @@ pub fn t1() {
     assert_eq!(
         index_pairs(
             "ababa".to_string(),
-            vec![
-                "aba".to_string(),
-                "ab".to_string(),
-            ]
+            vec!["aba".to_string(), "ab".to_string(),]
         ),
         vec![vec![0, 1], vec![0, 2], vec![2, 3], vec![2, 4]]
     );
 }
-

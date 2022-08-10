@@ -21,6 +21,8 @@ pub fn two_sum_less_than_k(nums: Vec<i32>, k: i32) -> i32 {
 
 #[test]
 pub fn t1() {
-    assert_eq!(two_sum_less_than_k(vec![34, 23, 1, 24, 75, 33, 54, 8], 60), 58);
+    assert_eq!(
+        two_sum_less_than_k(vec![34, 23, 1, 24, 75, 33, 54, 8], 60),
+        58
+    );
 }
-
