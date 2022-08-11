@@ -12,6 +12,7 @@ mod _0347_top_k_frequent_elements;
 mod _0349_intersection_of_two_arrays;
 mod _0350_intersection_of_two_arrays_ii;
 mod _0448_find_all_numbers_disappeared_in_an_array;
+mod _0453_minimum_moves_to_equal_array_elements;
 mod _0463_island_perimeter;
 mod _0485_max_consecutive_ones;
 mod _0495_teemo_attacking;
