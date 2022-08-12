@@ -106,6 +106,7 @@ mod _1572_matrix_diagonal_sum;
 mod _1582_special_positions_in_a_binary_matrix;
 mod _1588_sum_of_all_odd_length_subarrays;
 mod _1619_mean_of_array_after_removing_some_elements;
+mod _1629_slowest_key;
 mod _1636_sort_array_by_increasing_frequency;
 mod _1640_check_array_formation_through_concatenation;
 mod _1652_defuse_the_bomb;
