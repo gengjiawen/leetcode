@@ -51,7 +51,7 @@ pub fn slowest_key(release_times: Vec<i32>, keys_pressed: String) -> char {
     let chars = keys_pressed.chars().collect::<Vec<char>>();
     let mut max_char = chars[0];
     for i in 1..chars.len() {
-        let diff = (release_times[i] - release_times[i - 1]);
+        let diff = release_times[i] - release_times[i - 1];
         if diff > max_time || (diff == max_time && chars[i] > max_char) {
             max_time = diff;
             max_char = chars[i];
