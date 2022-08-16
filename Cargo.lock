@@ -23,6 +23,10 @@ name = "leetcode_greedy"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode_math"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode_priority_queue"
 version = "0.1.0"
 

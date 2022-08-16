@@ -9,5 +9,6 @@ members = [
     "greedy",
     "trie",
     "stack",
+    "Math",
     "priority_queue"
 ]
