@@ -3,6 +3,7 @@ members = [
     "Array",
     "DP",
     "backtracking",
+    "binary_search",
     "compiler",
     "sliding_window",
     "String",
