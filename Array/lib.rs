@@ -166,3 +166,4 @@ mod _2293_min_max_game;
 mod _2319_check_if_matrix_is_x_matrix;
 mod _2335_minimum_amount_of_time_to_fill_cups;
 mod _2303_calculate_amount_paid_in_taxes;
+mod _1603_design_parking_system;
