@@ -36,7 +36,7 @@
 // *   `command` consists of `"G"`, `"()"`, and/or `"(al)"` in some order.
 
 pub fn interpret(command: String) -> String {
-    return str::replace(&str::replace(&command, "()", "o"), "(al)", "al").to_string()
+    return str::replace(&str::replace(&command, "()", "o"), "(al)", "al").to_string();
 }
 
 #[test]

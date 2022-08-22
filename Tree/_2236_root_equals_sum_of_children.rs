@@ -29,9 +29,9 @@
 // *   The tree consists only of the root, its left child, and its right child.
 // *   `-100 <= Node.val <= 100`
 
+use crate::base_tree::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
-use crate::base_tree::TreeNode;
 
 pub fn check_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     let root_node = root.as_ref().unwrap().borrow();

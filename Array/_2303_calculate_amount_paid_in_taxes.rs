@@ -70,5 +70,8 @@ pub fn calculate_tax(brackets: Vec<Vec<i32>>, income: i32) -> f64 {
 
 #[test]
 pub fn t1() {
-    assert_eq!(calculate_tax(vec![vec![3, 50], vec![7, 10], vec![12, 25]], 10), 2.65);
+    assert_eq!(
+        calculate_tax(vec![vec![3, 50], vec![7, 10], vec![12, 25]], 10),
+        2.65
+    );
 }

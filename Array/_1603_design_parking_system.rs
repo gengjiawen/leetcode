@@ -37,13 +37,8 @@ struct ParkingSystem {
 }
 
 impl ParkingSystem {
-
     fn new(big: i32, medium: i32, small: i32) -> Self {
-        ParkingSystem {
-            big,
-            medium,
-            small,
-        }
+        ParkingSystem { big, medium, small }
     }
 
     fn add_car(&mut self, car_type: i32) -> bool {
@@ -51,15 +46,15 @@ impl ParkingSystem {
             1 => {
                 self.big = self.big - 1;
                 self.big >= 0
-            },
+            }
             2 => {
-                self.medium = self.medium -1;
+                self.medium = self.medium - 1;
                 self.medium >= 0
-            },
+            }
             3 => {
                 self.small = self.small - 1;
                 self.small >= 0
-            },
+            }
             _ => false,
         }
     }
