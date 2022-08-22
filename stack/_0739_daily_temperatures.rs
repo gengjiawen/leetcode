@@ -33,8 +33,8 @@ pub fn daily_temperatures_monotonic_stack(temperatures: Vec<i32>) -> Vec<i32> {
     let mut stack = Vec::new();
     for i in 0..temperatures.len() {
         while !stack.is_empty() && temperatures[i] > temperatures[stack[stack.len() - 1]] {
-                let prev = stack.pop().unwrap();
-                res[prev] = (i - prev) as i32;
+            let prev = stack.pop().unwrap();
+            res[prev] = (i - prev) as i32;
         }
         stack.push(i);
     }
