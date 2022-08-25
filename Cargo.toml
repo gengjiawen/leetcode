@@ -8,6 +8,7 @@ members = [
     "sliding_window",
     "String",
     "greedy",
+    "linked_list",
     "Tree",
     "trie",
     "stack",
