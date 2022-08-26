@@ -2,6 +2,6 @@
   "recommendations": [
     "firsttris.vscode-jest-runner",
     "vadimcn.vscode-lldb",
-    "matklad.rust-analyzer"
+    "rust-lang.rust-analyzer"
   ]
 }
