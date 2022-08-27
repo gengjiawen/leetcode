@@ -4,6 +4,7 @@ members = [
     "DP",
     "backtracking",
     "binary_search",
+    "bit_manipulation",
     "compiler",
     "sliding_window",
     "String",
