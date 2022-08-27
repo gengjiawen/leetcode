@@ -51,5 +51,5 @@ pub fn hamming_weight(n: u32) -> i32 {
 
 #[test]
 pub fn t1() {
-    assert_eq!(hamming_weight(00000000000011), 2);
+    assert_eq!(hamming_weight(0b000000000001011), 3);
 }
