@@ -1,5 +1,6 @@
 import { extract_rust_solution, underline } from './utils'
-import { sequelize } from './crawl_leetcode'
+import { Problem, sequelize } from './crawl_leetcode'
+import { generatePool, JSconfig } from './pools_utils'
 
 test('test underline filename', () => {
   const a = underline('minimum-swaps-to-group-all-1s-together')
@@ -35,4 +36,17 @@ test('leetcode statistics', async () => {
     `select count(*) from leetcode where paidOnly == 1;`,
   )
   console.log(`paid count`, paidCount[0])
+})
+
+test('generate special', async () => {
+  const r = await Problem.findAll({
+    where: {
+      frontend_id: 141,
+    },
+  })
+
+  await generatePool({
+    problems: r,
+    config: JSconfig,
+  })
 })

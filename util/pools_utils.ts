@@ -27,7 +27,7 @@ export const JSconfig: CodeConfig = {
   getCode: (c) => c.find((a) => a.value === 'javascript').defaultCode,
   ext: 'js',
   comment: '//',
-  fileNameStyle: (s) => s.replace(/[\s|?]/g, ''),
+  fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
 }
 
 export const Goconfig: CodeConfig = {
@@ -131,8 +131,3 @@ export async function generatePool({
     })
   })
 }
-
-console.log('generate pools finished')
-let test = false
-process.argv.includes('--test') && (test = true)
-// generatePool({ config: Rust, test: test }).catch(console.error)
