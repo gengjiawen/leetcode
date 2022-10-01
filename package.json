@@ -27,7 +27,7 @@
     "axios": "0.27.2",
     "dotenv": "^16.0.1",
     "fs-extra": "10.1.0",
-    "sequelize": "6.21.3",
+    "sequelize": "6.23.2",
     "sqlite3": "5.0.11",
     "to-markdown": "3.1.1"
   },
