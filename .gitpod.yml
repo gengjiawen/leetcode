@@ -4,6 +4,6 @@
 
 tasks:
     - init: yarn
-    - init: ./gradlew build
+    - init: sdk default java 17.0.4.fx-zulu && ./gradlew build
     - init: go test ./...
     - init: cargo test
