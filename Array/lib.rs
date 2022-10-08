@@ -157,6 +157,7 @@ mod _2164_sort_even_and_odd_indices_independently;
 mod _2176_count_equal_and_divisible_pairs_in_an_array;
 mod _2185_counting_words_with_a_given_prefix;
 mod _2206_divide_array_into_equal_pairs;
+mod _2210_count_hills_and_valleys_in_an_array;
 mod _2215_find_the_difference_of_two_arrays;
 mod _2229_check_if_an_array_is_consecutive;
 mod _2235_add_two_integers;
