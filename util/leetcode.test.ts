@@ -1,6 +1,6 @@
 import { extract_rust_solution, underline } from './utils'
 import { Problem, sequelize } from './crawl_leetcode'
-import { generatePool, JSconfig } from './pools_utils'
+import { generatePool, TSconfig } from './pools_utils'
 
 test('test underline filename', () => {
   const a = underline('minimum-swaps-to-group-all-1s-together')
@@ -41,12 +41,12 @@ test('leetcode statistics', async () => {
 test('generate special', async () => {
   const r = await Problem.findAll({
     where: {
-      frontend_id: 141,
+      frontend_id: 1379,
     },
   })
 
   await generatePool({
     problems: r,
-    config: JSconfig,
+    config: TSconfig,
   })
 })

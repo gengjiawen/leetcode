@@ -25,7 +25,14 @@ interface CodeConfig {
 
 export const JSconfig: CodeConfig = {
   getCode: (c) => c.find((a) => a.value === 'javascript').defaultCode,
-  ext: 'js',
+  ext: 'test.js',
+  comment: '//',
+  fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
+}
+
+export const TSconfig: CodeConfig = {
+  getCode: (c) => c.find((a) => a.value === 'typescript').defaultCode,
+  ext: 'test.ts',
   comment: '//',
   fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
 }
