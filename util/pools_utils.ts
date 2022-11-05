@@ -35,6 +35,14 @@ export const TSconfig: CodeConfig = {
   ext: 'test.ts',
   comment: '//',
   fileNameStyle: (s, i) => `_${i.toString().padStart(4, '0')}_${underline(s)}`,
+  test: (meta) => {
+    const { code } = meta
+    meta.code = `${code}\n
+test('test', async () => {
+})
+`
+    return meta
+  },
 }
 
 export const Goconfig: CodeConfig = {
