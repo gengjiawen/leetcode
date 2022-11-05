@@ -55,3 +55,5 @@ function getTargetCopy(
     getTargetCopy(original.right, cloned.right, target)
   )
 }
+
+test('test', async () => {})
