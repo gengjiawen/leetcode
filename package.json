@@ -28,7 +28,7 @@
     "dotenv": "^16.0.1",
     "fs-extra": "10.1.0",
     "sequelize": "6.28.2",
-    "sqlite3": "5.1.2",
+    "sqlite3": "5.1.5",
     "to-markdown": "3.1.1"
   },
   "jest": {
