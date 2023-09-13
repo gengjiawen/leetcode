@@ -52,7 +52,7 @@ pub fn decrypt(code: Vec<i32>, k: i32) -> Vec<i32> {
     if k > 0 {
         let mut sliding_sum = double_code.iter().take(k as usize).sum::<i32>();
         for i in 0..code.len() {
-            sliding_sum = sliding_sum - double_code[i] + double_code[(i + k as usize)];
+            sliding_sum = sliding_sum - double_code[i] + double_code[i + k as usize];
             res[i] = sliding_sum;
         }
     } else {
@@ -62,7 +62,7 @@ pub fn decrypt(code: Vec<i32>, k: i32) -> Vec<i32> {
             .sum::<i32>();
         for i in code.len()..(2 * code.len()) {
             sliding_sum = sliding_sum - double_code[i - positive_k as usize - 1]
-                + double_code[(i - 1 as usize)];
+                + double_code[i - 1 as usize];
             res[i - code.len()] = sliding_sum;
         }
     }
