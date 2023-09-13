@@ -5,7 +5,7 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
-name = "leetcode_DP"
+name = "leetcode_dp"
 path = "lib.rs"
 doctest = false
 
