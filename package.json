@@ -58,7 +58,7 @@
     "@types/to-markdown": "3.0.1",
     "husky": "8.0.3",
     "jest": "28.1.2",
-    "lint-staged": "^13.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "3.0.3",
     "prettier-plugin-toml": "^0.3.1",
     "rimraf": "4.4.1",
