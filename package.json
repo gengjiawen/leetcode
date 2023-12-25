@@ -52,7 +52,7 @@
     "@types/async": "^3.2.15",
     "@types/fs-extra": "9.0.13",
     "@types/jest": "*",
-    "@types/node": "18.11.18",
+    "@types/node": "20.10.1",
     "@types/rimraf": "4.0.5",
     "@types/sequelize": "^4.28.14",
     "@types/to-markdown": "3.0.1",
