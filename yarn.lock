@@ -892,10 +892,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
-"@types/to-markdown@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/to-markdown/-/to-markdown-3.0.1.tgz#fda05d97f361cfcee874ef10a378814e8f555628"
-  integrity sha512-6vRiQ/jWsxd5hwCMvu2qckdcrlCJOp97+0WmblewXWzC+bmmjc8vjFGzH0LAUGFBs2/B1OV5jAoJgWSo40TGqg==
+"@types/to-markdown@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/to-markdown/-/to-markdown-3.0.4.tgz#056bd5b1a9049902238d783e32f0b9b02f821a4e"
+  integrity sha512-51OpVv8Q/7kl8Q9KUpkYjX6WC+0/4M5mhxOTjMRPLSIhM25cTTuHl20Fi+1gPAu68vXhA67fIuRSk4XySGFvIA==
 
 "@types/validator@*", "@types/validator@^13.7.17":
   version "13.7.17"
