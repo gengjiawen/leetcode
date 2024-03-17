@@ -55,7 +55,7 @@
     "@types/node": "20.10.1",
     "@types/rimraf": "4.0.5",
     "@types/sequelize": "^4.28.14",
-    "@types/to-markdown": "3.0.1",
+    "@types/to-markdown": "3.0.4",
     "husky": "8.0.3",
     "jest": "28.1.2",
     "lint-staged": "^13.0.3",
